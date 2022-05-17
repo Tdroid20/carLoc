@@ -1,0 +1,43 @@
+@import '../../global.css';
+
+.header{
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.button_header{
+    font-family: 'QuickSand';
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.button_header:hover
+{
+    font-weight: 100;
+}
+
+.div_header_logo{
+    margin: auto;
+}
+
+.alinhamento_header{
+    display: flex;
+    align-items: center;
+}
+
+.alinhamento_texto_header{
+    display: flex;
+}
+
+.button_header_padding{
+    font-family: 'QuickSand';
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
