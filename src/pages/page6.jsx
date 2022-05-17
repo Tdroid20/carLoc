@@ -41,7 +41,7 @@ export const Pagina6 = () =>
                         </div>
 
                         <div className="div_botao_excluir_page6">
-                            <button className="btn_excluir_page6">Excuir usuário</button>
+                            <button className="btn_excluir_page6">Excluir usuário</button>
                         </div>
                     </div> 
                 </div>
