@@ -16,32 +16,41 @@
     font-weight: 900;
 }
 
+.div_inputs_perfil_page6{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
 .input_page6_campos{
     font-family: 'QuickSand';
     width: 953px;
     height: 70px;
-    margin-left: 70px;
     font-size: 24px;
     border: #DCE0E2;
     padding-left: 60px;
+    background-color: #DCE0E2;
+    border-radius: 10px;
 }
 
 .input_page6_campos_espaço{
     font-family: 'QuickSand';
     width: 953px;
     height: 70px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 70px;
+    margin-bottom: 55px;
+    margin-top: 55px;
     font-size: 24px;
     border: #DCE0E2;
     padding-left: 60px;
+    background-color: #DCE0E2;
+    border-radius: 10px;
 }
 
 .alinhamento_botoes_perfil{
     display: flex;
-    margin-left: 70px;
-    margin-top: 280px;
+    margin-left: 120px;
+    margin-top: 190px;
 }
 
 .botao_atualizar_page6{
@@ -77,15 +86,24 @@
 }
 
 .border_bottom_page6{
-    width: 634px;
+    max-width: 634px;
     border: 1px solid #000000;
     margin-bottom: 60px;
 }
 
+.div_pai_card_excluir_page6{
+    border: 1px solid #C6C4C4;
+    max-width: 1200px;
+    height: 110px;
+    border-radius: 10px;
+
+}
+
 .div_posicionamento_textos_page6{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
 }
 
 .texto_nome_page6{

@@ -3,49 +3,66 @@
 .footer
 {
     display: flex;
-    justify-content: space-evenly;
     height: 328px;
     background: #CAD0D3;
-    margin-top: 160px;
-    margin: auto;
+    margin-top: 120px;
+    font-family: 'Roboto';
 }
 
 .div_alinhamento_footer{
     display: flex;
-    padding-top: 60px;
-    flex-direction: column;
+    margin: auto;
+    background: #CAD0D3;
     width: 1200px;
+    justify-content: space-between;
 }
 
-.div_textos_politicas{
-    display: flex;
-}
-
-.div_contatos_endereço_footer{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 80px;
-}
-
-.texto_contatos_footer{
-    font-family: 'Roboto';
-    font-size: 24px;
-}
-
-.padding_texto_contatos_footer{
-    font-family: 'Roboto';
-    padding-right: 50px;
-    padding-left: 50px;
-    font-size: 24px;
-}
-
-.linha_central_footer{
-    height: 200px;
+.vertical
+{
+    margin-right: 105px;
+    height: 260px;
     border-right: 1px solid black;
 }
 
-.padding_logos_footer{
-    padding-left: 55px;
-    padding-right: 55px;
+.div_endereco_texto_footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 20px;
+    margin-top: 80px;
+}
+
+.texto_contato_footer{
+    font-size: 24px;
+    color: #060606;
+}
+
+.texto_contato_padding_footer{
+    font-size: 24px;
+    color: #060606;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.div_alinhamento_logo_footer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo_padding_footer{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.texto_direitos_footer{
+    font-size: 24px;
+}
+
+.padding_email_footer{
+    padding-bottom: 25px;
+}
+
+.div_contatos_padding_footer{
+    margin-top: 20px;
 }
