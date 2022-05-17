@@ -19,7 +19,9 @@
     border-radius: 10px;
     width: 550px;
     height: 893px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-top: 127px;
     margin-right: 36px;
 }
@@ -37,6 +39,7 @@
     margin-top: 76px;
     font-family: 'Quicksand', sans-serif;
     font-size: 24px;
+    width: 420px;
 }
 
 .cardCadastro

@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../../assets/css/perfil.css';
+import '../../assets/css/login.css';
 
 import logoPerfil from '../../assets/img/logoPerfil.png';
 
