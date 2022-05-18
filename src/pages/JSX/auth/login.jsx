@@ -13,7 +13,9 @@ const Login = () =>
             <main>
 
                 <div className="logoLogin">
-                    <img src={logoLogin} alt=""/>
+                    <a href="/home">
+                        <img src={logoLogin} alt=""/>
+                    </a>
                 </div>
 
                 <div className="alinhamentoLogin">
