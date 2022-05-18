@@ -1,4 +1,4 @@
-@import '../../index.css';
+@import '../../global.css';
 
 .footer
 {
@@ -7,7 +7,6 @@
     background: #CAD0D3;
     margin-top: 120px;
     font-family: 'Roboto';
-    max-width: 1440px;
 }
 
 .div_alinhamento_footer{
@@ -58,7 +57,7 @@
 
 .texto_direitos_footer{
     font-size: 24px;
-    margin-top: 79px;
+    margin-top: 80px;
 }
 
 .padding_email_footer{

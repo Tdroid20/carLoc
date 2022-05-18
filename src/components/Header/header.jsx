@@ -8,18 +8,18 @@ export const Header = () =>
         <>
             <div className='header'>
                 <div className='alinhamento_texto_header'>
-                    <p className='button_header'>Home</p>
-                    <p className='button_header_padding'>Carros</p>
-                    <p className='button_header'>Reservas</p>
+                    <p className='button_header'><a href="/home">Home</a></p>
+                    <p className='button_header_padding'><a href="/cars">Carros</a></p>
+                    <p className='button_header'><a href="/reservations">Reservas</a></p>
                 </div>
 
                 <div>
                 <img src={logoHeader} alt="Logo do site LocCar" />
                 </div>
-                    
+
                 <div className='alinhamento_texto_header'>
-                    <p className='button_header'>Locadoras</p>
-                    <p className='button_header_padding'>Perfil</p>
+                    <p className='button_header'><a href="/rental">Locadoras</a></p>
+                    <p className='button_header_padding'><a href="/profile">Perfil</a></p>
                     <p className='button_header'>Sair</p>
                 </div>
             </div>

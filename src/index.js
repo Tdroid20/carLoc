@@ -1,27 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './index.css';
-
-import Home from './pages/Home/home';
-import Perfil from './pages/Login/login';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import './global.css';
+import Perfil from './pages/JSX/auth/login';
+import Home from './pages/JSX/home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const Rotas = () => {
-
-  return(
-      <BrowserRouter>
-          <Routes>
-            <Route element={<Home/>} path='/'/>
-            <Route element={<Perfil/>} path='/perfil'/>
-          </Routes>
-      </BrowserRouter>
-  );
+function RoutersApp() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Navigate replace to="/home" />} />
+                <Route path='/home' element={ <Home /> }/>
+                <Route path='/profile' element={ <Perfil /> } />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 root.render(
-  <React.StrictMode>
-      <Rotas/>
-  </React.StrictMode>
-);  
+    <React.StrictMode>
+        <RoutersApp />
+    </React.StrictMode>
+);

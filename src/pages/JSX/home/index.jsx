@@ -2,34 +2,34 @@ import React from 'react';
 
 import { Link } from "react-router-dom";
 
-import '../../assets/css/home.css';
+import '../../../assets/css/home.css';
+import Logo from '../../../assets/img/logoHome.png';
+import Banner from '../../../assets/img/banner.png';
+import CarroEconomico from '../../../assets/img/car1.png';
+import CarroEspecial from '../../../assets/img/car 2.png';
+import CarroLuxo from '../../../assets/img/car3.png';
 
-import Footer from '../../components/Footer/footer'
-
-import Logo from '../../assets/img/logoHome.png';
-import Banner from '../../assets/img/banner.png';
-import CarroEconomico from '../../assets/img/car1.png';
-import CarroEspecial from '../../assets/img/car 2.png';
-import CarroLuxo from '../../assets/img/car3.png';
+import { Footer } from '../../../components/Footer/footer';
 
 const Home = () =>
 {
     return (
 
         <>
+            {/* Main */}
             <main>
                 <div className='alinhamentoHome'>
                     <img className='logoHome' src={Logo} alt="" />
 
                     <div>
-                        <img className='bannerHome' src={Banner} alt=""/> 
+                        <img className='bannerHome' src={Banner} alt=""/>
                     </div>
 
                     <div className='btnHome'>
-                        <Link to='/perfil' className="links"><button className='loginHome'>Login</button></Link>                        
-                        <Link to='/perfil' className="links"><button className='saveHome'>Cadastrar</button></Link>
+                        <Link to='/profile' className="links"><button className='loginHome'>Login</button></Link>
+                        <Link to='/profile' className="links"><button className='saveHome'>Cadastrar</button></Link>
                     </div>
-                
+
                 </div>
 
                 <div className='cardHome'>
@@ -52,9 +52,13 @@ const Home = () =>
                     </div>
                 </div>
             </main>
-            <Footer/>
+
+            {/* Footer */}
+
+            <Footer />
+
         </>
     )
 }
 
-export default Home
+export default Home;
