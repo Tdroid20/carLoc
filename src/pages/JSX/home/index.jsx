@@ -26,8 +26,8 @@ const Home = () =>
                     </div>
 
                     <div className='btnHome'>
-                        <Link to='/profile' className="links"><button className='loginHome'>Login</button></Link>
-                        <Link to='/profile' className="links"><button className='saveHome'>Cadastrar</button></Link>
+                        <Link to='/login' className="links"><button className='loginHome'>Login</button></Link>
+                        <Link to='/login' className="links"><button className='saveHome'>Cadastrar</button></Link>
                     </div>
 
                 </div>

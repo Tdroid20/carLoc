@@ -1,12 +1,12 @@
 @import '../../global.css';
 
-.logoPerfil
+.logoLogin
 {
     text-align: center;
     margin-top: 62px;
 }
 
-.alinhamentoPerfil
+.alinhamentoLogin
 {
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@
     font-weight: 700;
 }
 
-.txtPerfil
+.txtLogin
 {
     margin-top: 76px;
     font-family: 'Quicksand', sans-serif;
@@ -89,7 +89,7 @@
     color: black;
 }
 
-.cadastrarPerfil
+.cadastrarLogin
 {
     width: 250px;
     height: 70px;
@@ -104,7 +104,7 @@
     cursor: pointer;
 }
 
-.cadastrarPerfil:hover
+.cadastrarLogin:hover
 {
     color: #DB1812;
     background-color: white;

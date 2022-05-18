@@ -2,26 +2,26 @@ import React from "react";
 
 import '../../../assets/css/login.css';
 
-import logoPerfil from '../../../assets/img/logoheader.png';
+import Footer from '../../../components/Footer/footer'
 
-const Perfil = () =>
+import logoLogin from '../../../assets/img/logoLogin.png';
+
+const Login = () =>
 {
     return(
         <>
             <main>
 
-                <div className="logoPerfil">
-                    <a href="/home">
-                        <img src={logoPerfil} alt="" />
-                    </a>
+                <div className="logoLogin">
+                    <img src={logoLogin} alt=""/>
                 </div>
 
-                <div className="alinhamentoPerfil">
+                <div className="alinhamentoLogin">
 
                     <div className="cardLogin">
                         <h2 className="h2Login">Login</h2>
 
-                        <p className="txtPerfil">Este portal oferece uma experiência única, segura e oferta um serviço de qualidade!</p>
+                        <p className="txtLogin">Este portal oferece uma experiência única, segura e oferta um serviço de qualidade!</p>
                     </div>
 
                     <div className="cardCadastro">
@@ -36,16 +36,17 @@ const Perfil = () =>
                         </div>
 
                         <div>
-                            <button className="cadastrarPerfil">Cadastrar</button>
+                            <button className="cadastrarLogin">Cadastrar</button>
                         </div>
 
                     </div>
 
                 </div>
-
+                             
             </main>
+            <Footer/>       
         </>
     )
 }
 
-export default Perfil;
+export default Login
