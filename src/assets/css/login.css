@@ -106,5 +106,8 @@
 
 .cadastrarPerfil:hover
 {
-    color: black;
+    color: #DB1812;
+    background-color: white;
+    border: 2px solid #DB1812;
+    border-radius: 5px;
 }

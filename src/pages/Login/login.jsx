@@ -2,9 +2,11 @@ import React from "react";
 
 import '../../assets/css/login.css';
 
+import Footer from '../../components/Footer/footer'
+
 import logoPerfil from '../../assets/img/logoPerfil.png';
 
-const Perfil = () =>
+const Login = () =>
 {
     return(
         <>
@@ -41,9 +43,10 @@ const Perfil = () =>
 
                 </div>
                              
-            </main>            
+            </main>
+            <Footer/>       
         </>
     )
 }
 
-export default Perfil
+export default Login

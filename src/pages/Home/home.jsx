@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import '../../assets/css/home.css';
 
+import Footer from '../../components/Footer/footer'
+
 import Logo from '../../assets/img/logoHome.png';
 import Banner from '../../assets/img/banner.png';
 import CarroEconomico from '../../assets/img/car1.png';
@@ -50,6 +52,7 @@ const Home = () =>
                     </div>
                 </div>
             </main>
+            <Footer/>
         </>
     )
 }
