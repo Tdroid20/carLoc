@@ -3,5 +3,5 @@
         "JSX": "react"
     },
     "explorer.compactFolders": false,
-    "deepscan.enable": true
+    "deepscan.enable": true,
 }

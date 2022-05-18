@@ -1,0 +1,130 @@
+@import '../../global.css';
+
+.alinhamentoHome
+{
+    display: flex;
+    justify-content: center;
+}
+
+.logoHome
+{
+    position: absolute;
+    right: 100px;
+}
+
+.bannerHome
+{
+    width: 1140px;
+    height: 688.03px;
+}
+
+.btnHome
+{
+    position: absolute;
+    top: 573px;
+}
+
+.links
+{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.loginHome
+{
+    width: 250px;
+    height: 70px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-right: 28px;
+}
+
+.loginHome:hover
+{
+    color: black;
+}
+
+.saveHome
+{
+    width: 250px;
+    height: 70px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.saveHome:hover
+{
+    color: black;
+}
+
+.cardHome
+{
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 167px;
+    margin-bottom: 128px;
+}
+
+.economico
+{
+    border: 1px solid #C6C4C4;
+    text-align: center;
+}
+
+.especial
+{
+    border: 1px solid #C6C4C4;
+    text-align: center;
+}
+
+.luxo
+{
+    border: 1px solid #C6C4C4;
+    text-align: center;
+}
+
+.txtReservar
+{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 13px;
+}
+
+.btnReservar
+{
+    width: 250px;
+    height: 75px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 27px;
+   margin-bottom: 40px;
+}
+
+.btnReservar:hover
+{
+    color: black;
+}
