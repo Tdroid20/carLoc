@@ -4,7 +4,7 @@ import '../../../assets/css/login.css';
 
 import logoPerfil from '../../../assets/img/logoheader.png';
 
-const Perfil = () =>
+const Login = () =>
 {
     return(
         <>
@@ -48,4 +48,4 @@ const Perfil = () =>
     )
 }
 
-export default Perfil;
+export default Login;
