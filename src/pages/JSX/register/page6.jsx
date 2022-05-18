@@ -1,9 +1,9 @@
 import React from "react";
-import '../assets/css/page6.css'
-import Header from "../components/Header/header";
-import Footer from "../components/Footer/footer"
+import '../../../assets/css/page6.css'
+import Header from "../../../components/Header/header";
+import Footer from "../../../components/Footer/footer";
 
-export const Pagina6 = () =>
+export const Perfil = () =>
 {
     return(
         <>
@@ -52,3 +52,5 @@ export const Pagina6 = () =>
         </>
     )
 }
+
+export default Perfil

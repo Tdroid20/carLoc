@@ -14,7 +14,7 @@
     margin: auto;
     background: #CAD0D3;
     width: 1200px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .vertical
