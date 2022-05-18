@@ -1,9 +1,10 @@
 @import '../../global.css';
 
 .card_perfil_page6{
+    height: 800px;
     border: 1px solid #9F9999;
     border-radius: 10px;
-    height: 800px;
+    margin: auto;
 }
 
 .h1_page6{
@@ -83,6 +84,8 @@
     font-family: 'Montserrat';
     font-size: 40px;
     margin-top: 100px;
+    font-weight: 400;
+    color: #040404;
 }
 
 .border_bottom_page6{
@@ -92,8 +95,8 @@
 }
 
 .div_pai_card_excluir_page6{
+    margin: auto;
     border: 1px solid #C6C4C4;
-    max-width: 1200px;
     height: 110px;
     border-radius: 10px;
 

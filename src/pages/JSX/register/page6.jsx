@@ -46,9 +46,9 @@ export const Perfil = () =>
                     </div> 
                 </div>
 
-                       
+               
             </main>
-            <Footer/>
+            <Footer/> 
         </>
     )
 }
