@@ -9,7 +9,7 @@
 .logoHome
 {
     position: absolute;
-    right: 100px;
+    margin-left: 450px;
 }
 
 .bannerHome
@@ -49,7 +49,10 @@
 
 .loginHome:hover
 {
-    color: black;
+    color: #DB1812;
+    background-color: white;
+    border: 2px solid #DB1812;
+    border-radius: 5px;
 }
 
 .saveHome
@@ -69,7 +72,10 @@
 
 .saveHome:hover
 {
-    color: black;
+    color: #DB1812;
+    background-color: white;
+    border: 2px solid #DB1812;
+    border-radius: 5px;
 }
 
 .cardHome
@@ -126,5 +132,8 @@
 
 .btnReservar:hover
 {
-    color: black;
+    color: #DB1812;
+    background-color: white;
+    border: 2px solid #DB1812;
+    border-radius: 5px;
 }
