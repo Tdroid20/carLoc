@@ -1,0 +1,7 @@
+{
+    "material-icon-theme.folders.associations": {
+        "JSX": "react"
+    },
+    "explorer.compactFolders": false,
+    "deepscan.enable": true,
+}

@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import logoface from "../../assets/img/logoface.png"
 import logoinsta from "../../assets/img/logoinsta.png"
 import logotwitter from "../../assets/img/logotwitter.png"
 import '../../assets/css/footer.css'
 
-export const Header = () =>
+export const Footer = () =>
 {
     return(
         <>
@@ -20,7 +21,7 @@ export const Header = () =>
                                 <p>AV. Principal, 123 . BH/MG</p>
                             </div>
 
-                        </div>   
+                        </div>
                        <div className="vertical"></div>
                         <div className='div_alinhamento_logo_footer'>
                             <div>
@@ -36,4 +37,4 @@ export const Header = () =>
     );
 }
 
-export default Header;
+export default Footer;
