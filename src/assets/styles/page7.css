@@ -1,0 +1,178 @@
+
+.secao1{
+
+    width: 1140px;
+    height: 531px;
+    margin: auto;
+    margin-top: 78px;
+    border-radius: 5px;
+    border: 1px solid #9F9999;
+}
+
+.titulo{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    margin-top: 36px;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.inputs{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column ;
+    margin-top: 49px;
+    
+
+}
+
+.paiInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.input-1{
+    width: 991px ;
+    height: 70px ;
+    margin-top: 30px;
+    background-color: #DCE0E2;
+    border: none;
+    border-radius: 5px;
+    padding-left: 70px;
+    font-size: 24px;
+}
+
+.input-1::placeholder{
+
+    font-family: 'Quicksand', sans-serif;
+    color: #4B2142;
+    font-size: 24px;
+    font-weight: 400px;
+
+}
+
+.input-2{
+    width: 450px;
+    height: 70px;
+    background-color: #DCE0E2;
+    border: none;
+    border-radius: 5px;
+    padding-left: 70px;
+    font-size: 24px;
+}
+
+.input-2::placeholder{
+
+    font-family: 'Quicksand', sans-serif;
+    color: #4B2142;
+    font-size: 24px;
+    font-weight: 400px;
+
+}
+
+.bloco2{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 991px;
+}
+
+.btCadastrar{
+    width: 250px;
+    height: 70px;
+    background-color: #DB1812;
+    color: #fafdff;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.btCadastrar:hover{
+
+    
+    color: #DB1812;
+    background-color: #ffffff;
+    border: 2px solid #DB1812;
+
+
+}
+
+.linha2{
+
+    width: 1140px;
+    height: 110px;
+    margin: auto;
+    border: 1px solid #9F9999;
+    border-radius: 5px;
+    margin-top: 124px;
+    margin-bottom: 79px;
+
+}
+
+.conteudo2{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    align-items: center;
+    margin-top: 20px;
+
+    
+}
+
+.Locadoras{
+
+    
+    font-weight: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    
+}
+
+.ruaEnumero{
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.btEditar{
+    width: 250px ;
+    height: 70px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #DB1812;
+    border-color: #DB1812;
+    border: none;
+    border-radius: 5px;
+}
+
+.btEditar:hover{
+
+    color: #DB1812;
+    background-color: #ffffff;
+    border: 2px solid #DB1812;
+
+}
+
+.btExcluir{
+    width: 250px ;
+    height: 70px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
+    color: #DB1812;
+    background-color: #ffffff;
+    border: 2px solid #DB1812;
+    border-radius: 5px;
+}
+
+.btExcluir:hover{
+
+    color: #ffffff;
+    background-color: #DB1812;
+    border: 2px solid #DB1812;
+
+}
