@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
 
 import '../../../assets/css/login.css';
+
 import Footer from "../../../components/Footer/footer"
-
-import HandleCredentialResponse from '../../../api/auth.';
-
-import Footer from '../../../components/Footer/footer';
-
+import HandleCredentialResponse from '../../../api/auth';
 import logoLogin from '../../../assets/img/logoLogin.png';
 
 const Login = () =>
