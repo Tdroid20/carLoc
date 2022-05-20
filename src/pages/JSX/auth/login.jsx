@@ -54,11 +54,8 @@ const Login = () =>
                         <div>
                             <button className="cadastrarLogin">Cadastrar</button>
                         </div>
-
                     </div>
-
                 </div>
-                             
             </main>
             <Footer/>       
         </>
