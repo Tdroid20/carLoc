@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import '../../../assets/css/login.css';
 
-import GoogleApi from '../../../services/Google/googleApi';
+import HandleCredentialResponse from '../../../api/auth.';
 
 import Footer from '../../../components/Footer/footer';
 
@@ -11,9 +11,9 @@ import logoLogin from '../../../assets/img/logoLogin.png';
 const Login = () =>
 {
 
-    useEffect (() =>{
-        GoogleApi ()
-    },[])
+    useEffect(() => {
+        HandleCredentialResponse()
+    }, [])
 
     return(
         <>
@@ -32,7 +32,11 @@ const Login = () =>
 
                         <p className="txtLogin">Este portal oferece uma experiência única, segura e oferta um serviço de qualidade!</p>
 
-                        <div id="buttonDiv"></div> 
+                        <div className="auth">
+                            <div id="googleAuth">
+
+                            </div>
+                        </div>
                     </div>
 
                     <div className="cardCadastro">
