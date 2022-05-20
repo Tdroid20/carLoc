@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import '../../../assets/css/login.css';
 
 import HandleCredentialResponse from '../../../api/auth.';
-
 import Footer from '../../../components/Footer/footer';
 
 import logoLogin from '../../../assets/img/logoLogin.png';

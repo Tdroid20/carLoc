@@ -14,7 +14,7 @@ export const Header = () =>
                 </div>
 
                 <div>
-                <img src={logoHeader} alt="Logo do site LocCar" />
+                    <img src={logoHeader} alt="Logo do site LocCar" />
                 </div>
 
                 <div className='alinhamento_texto_header'>
