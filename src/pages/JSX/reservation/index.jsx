@@ -4,7 +4,7 @@ import carImg from "../../../assets/img/car1.png"
 import Footer from "../../../components/Footer/footer";
 import Header from "../../../components/Header/header";
 
-const Reservation = () => {
+export const Reservation = () => {
     return (
         <>
 
@@ -14,7 +14,7 @@ const Reservation = () => {
 
         {/* Main */}
 
-        <div className="main">
+        <main>
             <h1 className="titleRV">Reservas</h1>
 
             <div className="cards">
@@ -67,8 +67,7 @@ const Reservation = () => {
                     </div>
                 </div>
             </div>
-        </div>
-
+            </main>
         {/* Footer */}
 
         <Footer />

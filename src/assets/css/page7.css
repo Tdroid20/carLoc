@@ -37,6 +37,7 @@
 .input-1{
     width: 991px ;
     height: 70px ;
+    font-family: 'Quicksand', sans-serif;
     margin-top: 30px;
     background-color: #DCE0E2;
     border: none;
@@ -48,7 +49,7 @@
 .input-1::placeholder{
 
     font-family: 'Quicksand', sans-serif;
-    color: #4B2142;
+    color: #040404;
     font-size: 24px;
     font-weight: 400px;
 
@@ -57,6 +58,7 @@
 .input-2{
     width: 450px;
     height: 70px;
+    font-family: 'Quicksand', sans-serif;
     background-color: #DCE0E2;
     border: none;
     border-radius: 5px;
@@ -67,7 +69,7 @@
 .input-2::placeholder{
 
     font-family: 'Quicksand', sans-serif;
-    color: #4B2142;
+    color: #040404;
     font-size: 24px;
     font-weight: 400px;
 
@@ -90,6 +92,7 @@
     font-size: 24px;
     font-weight: 700;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .btCadastrar:hover{
@@ -118,25 +121,26 @@
     display: flex;
     justify-content: space-around;
     margin: auto;
-    align-items: center;
     margin-top: 20px;
-
-    
 }
 
 .Locadoras{
-
-    
-    font-weight: 200px;
+    font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-    
 }
 
-.ruaEnumero{
+.texto_rua_page7{
     font-family: 'Quicksand', sans-serif;
-
+    font-size: 20px;
+    margin-bottom: 10px;
 }
+
+.texto_numero_page7{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+
 
 .btEditar{
     width: 250px ;
@@ -149,6 +153,7 @@
     border: none;
     border-radius: 5px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .btEditar:hover{
@@ -169,6 +174,7 @@
     border: 2px solid #DB1812;
     border-radius: 5px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .btExcluir:hover{

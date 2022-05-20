@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/css/page7.css'
+import '../../../assets/css/page7.css'
 import Header from '../../../components/Header/header'
 import Footer from '../../../components/Footer/footer'
 
@@ -42,8 +42,8 @@ export const Locadora = () => {
                         <h2 className="Locadoras">Locadora Matriz</h2>
 
                         <div>
-                            <p className="ruaEnumero">Rua marques, 320</p>
-                            <p className="ruaEnumero">(11) 8888-8888</p>
+                            <p className="texto_rua_page7">Rua marques, 320</p>
+                            <p className="texto_numero_page7">(11) 8888-8888</p>
                         </div>
 
                         <button className="btEditar">Editar</button>

@@ -11,7 +11,7 @@ import CarroLuxo from '../../../assets/img/car3.png';
 
 import { Footer } from '../../../components/Footer/footer';
 
-const Home = () =>
+export const Home = () =>
 {
     return (
 
