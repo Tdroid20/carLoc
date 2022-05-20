@@ -1,11 +1,15 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import HandleCredentialResponse from "../../../api/auth";
 import '../../../assets/css/login.css';
-
 import logoPerfil from '../../../assets/img/logoheader.png';
 
 const Login = () =>
 {
+
+    useEffect(() => {
+        HandleCredentialResponse()
+    }, [])
+
     return(
         <>
             <main>
@@ -22,6 +26,12 @@ const Login = () =>
                         <h2 className="h2Login">Login</h2>
 
                         <p className="txtPerfil">Este portal oferece uma experiência única, segura e oferta um serviço de qualidade!</p>
+
+                        <div className="auth">
+                            <div id="googleAuth">
+
+                            </div>
+                        </div>
                     </div>
 
                     <div className="cardCadastro">
@@ -34,15 +44,11 @@ const Login = () =>
 
                             <input className="inputCadastro" type="email" placeholder="E-mail"/>
                         </div>
-
-                        <div>
+                        <div className="signup">
                             <button className="cadastrarPerfil">Cadastrar</button>
                         </div>
-
                     </div>
-
                 </div>
-
             </main>
         </>
     )

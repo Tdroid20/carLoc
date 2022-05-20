@@ -108,3 +108,13 @@
 {
     color: black;
 }
+
+.auth {
+    height: 64%;
+    display: flex;
+}
+
+#googleAuth {
+    display: flex;
+    align-items: flex-end;
+}
