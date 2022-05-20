@@ -1,6 +1,7 @@
 import React from "react";
 
 import '../../../assets/css/login.css';
+import Footer from "../../../components/Footer/footer"
 
 import logoPerfil from '../../../assets/img/logoheader.png';
 
@@ -44,6 +45,7 @@ const Login = () =>
                 </div>
 
             </main>
+            <Footer/>
         </>
     )
 }

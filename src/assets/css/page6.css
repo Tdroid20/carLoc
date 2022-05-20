@@ -1,0 +1,135 @@
+@import '../../global.css';
+
+.card_perfil_page6{
+    height: 800px;
+    border: 1px solid #9F9999;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.h1_page6{
+    font-family: 'QuickSand';
+    color: #040404;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    font-weight: 900;
+}
+
+.div_inputs_perfil_page6{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_page6_campos{
+    font-family: 'QuickSand';
+    width: 953px;
+    height: 70px;
+    font-size: 24px;
+    border: #DCE0E2;
+    padding-left: 60px;
+    background-color: #DCE0E2;
+    border-radius: 10px;
+}
+
+.input_page6_campos_espaço{
+    font-family: 'QuickSand';
+    width: 953px;
+    height: 70px;
+    margin-bottom: 55px;
+    margin-top: 55px;
+    font-size: 24px;
+    border: #DCE0E2;
+    padding-left: 60px;
+    background-color: #DCE0E2;
+    border-radius: 10px;
+}
+
+.alinhamento_botoes_perfil{
+    display: flex;
+    margin-left: 120px;
+    margin-top: 190px;
+}
+
+.botao_atualizar_page6{
+    font-family: 'QuickSand';
+    width: 250px;
+    height: 70px;
+    font-size: 24px;
+    border-radius: 5px;
+    background-color: #DB1812;
+    color: #FFFFFF;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.botao_excluir_page6{
+    font-family: 'QuickSand';
+    width: 250px;
+    height: 70px;
+    margin-left: 20px;
+    border: 3px solid #DB1812;
+    color: #DB1812;
+    font-size: 24px;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.h2_page6{
+    font-family: 'Montserrat';
+    font-size: 40px;
+    margin-top: 100px;
+    font-weight: 400;
+    color: #040404;
+}
+
+.border_bottom_page6{
+    max-width: 634px;
+    border: 1px solid #000000;
+    margin-bottom: 60px;
+}
+
+.div_pai_card_excluir_page6{
+    margin: auto;
+    border: 1px solid #C6C4C4;
+    height: 110px;
+    border-radius: 10px;
+
+}
+
+.div_posicionamento_textos_page6{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.texto_nome_page6{
+    font-family: 'Montserrat';
+    color: #000000;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.subtexto_usuario_page6
+{
+    font-family: 'QuickSand';
+    font-size: 20px;
+}
+
+.btn_excluir_page6{
+    width: 250px;
+    height: 70px;
+    font-family: 'QuickSand';
+    border: 2px solid #DB1812;
+    border-radius: 5px;
+    color: #DB1812;
+    font-weight: 800;
+    font-size: 24px;
+    cursor: pointer;
+}

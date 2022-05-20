@@ -16,11 +16,6 @@ const Home = () =>
     return (
 
         <>
-
-            {/* Header */}
-
-            <Header />
-
             {/* Main */}
             <main>
                 <div className='alinhamentoHome'>
