@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import '../../../assets/css/login.css';
 
-import Footer from '../../../components/Footer/footer'
+import GoogleApi from '../../../services/Google/googleApi';
+
+import Footer from '../../../components/Footer/footer';
 
 import logoLogin from '../../../assets/img/logoLogin.png';
 
 const Login = () =>
 {
+
+    useEffect (() =>{
+        GoogleApi ()
+    },[])
+
     return(
         <>
             <main>
@@ -24,6 +31,8 @@ const Login = () =>
                         <h2 className="h2Login">Login</h2>
 
                         <p className="txtLogin">Este portal oferece uma experiência única, segura e oferta um serviço de qualidade!</p>
+
+                        <div id="buttonDiv"></div> 
                     </div>
 
                     <div className="cardCadastro">
