@@ -1,12 +1,12 @@
 @import '../../global.css';
 
-.logoPerfil
+.logoLogin
 {
     text-align: center;
     margin-top: 62px;
 }
 
-.alinhamentoPerfil
+.alinhamentoLogin
 {
     display: flex;
     justify-content: center;
@@ -34,12 +34,17 @@
     font-weight: 700;
 }
 
-.txtPerfil
+.txtLogin
 {
     margin-top: 76px;
     font-family: 'Quicksand', sans-serif;
     font-size: 24px;
     width: 420px;
+}
+
+.auth
+{
+    margin-top: 277px;
 }
 
 .cardCadastro
@@ -68,7 +73,7 @@
     justify-content: space-between;
     align-items: center;
     height: 300px;
-
+    
 }
 
 .inputCadastro
@@ -89,7 +94,7 @@
     color: black;
 }
 
-.cadastrarPerfil
+.cadastrarLogin
 {
     width: 250px;
     height: 70px;

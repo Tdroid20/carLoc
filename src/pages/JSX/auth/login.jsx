@@ -1,28 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import '../../../assets/css/login.css';
 import Footer from "../../../components/Footer/footer"
 
-import logoPerfil from '../../../assets/img/logoheader.png';
+import HandleCredentialResponse from '../../../api/auth.';
+
+import Footer from '../../../components/Footer/footer';
+
+import logoLogin from '../../../assets/img/logoLogin.png';
 
 const Login = () =>
 {
+
+    useEffect(() => {
+        HandleCredentialResponse()
+    }, [])
+
     return(
         <>
             <main>
 
-                <div className="logoPerfil">
+                <div className="logoLogin">
                     <a href="/home">
-                        <img src={logoPerfil} alt="" />
+                        <img src={logoLogin} alt=""/>
                     </a>
                 </div>
 
-                <div className="alinhamentoPerfil">
+                <div className="alinhamentoLogin">
 
                     <div className="cardLogin">
                         <h2 className="h2Login">Login</h2>
 
-                        <p className="txtPerfil">Este portal oferece uma experiência única, segura e oferta um serviço de qualidade!</p>
+                        <p className="txtLogin">Este portal oferece uma experiência única, segura e oferta um serviço de qualidade!</p>
+
+                        <div className="auth">
+                            <div id="googleAuth">
+
+                            </div>
+                        </div>
                     </div>
 
                     <div className="cardCadastro">
@@ -37,17 +52,17 @@ const Login = () =>
                         </div>
 
                         <div>
-                            <button className="cadastrarPerfil">Cadastrar</button>
+                            <button className="cadastrarLogin">Cadastrar</button>
                         </div>
 
                     </div>
 
                 </div>
-
+                             
             </main>
-            <Footer/>
+            <Footer/>       
         </>
     )
 }
 
-export default Login;
+export default Login

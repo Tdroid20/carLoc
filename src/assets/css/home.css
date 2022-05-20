@@ -92,18 +92,21 @@
 {
     border: 1px solid #C6C4C4;
     text-align: center;
+    border-radius: 10px;
 }
 
 .especial
 {
     border: 1px solid #C6C4C4;
     text-align: center;
+    border-radius: 10px;
 }
 
 .luxo
 {
     border: 1px solid #C6C4C4;
     text-align: center;
+    border-radius: 10px;
 }
 
 .txtReservar

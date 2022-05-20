@@ -8,7 +8,7 @@ import Banner from '../../../assets/img/banner.png';
 import CarroEconomico from '../../../assets/img/car1.png';
 import CarroEspecial from '../../../assets/img/car 2.png';
 import CarroLuxo from '../../../assets/img/car3.png';
-import Header from '../../../components/Header/header';
+
 import { Footer } from '../../../components/Footer/footer';
 
 const Home = () =>
