@@ -9,7 +9,7 @@ import Economico from '../../../assets/img/car1.png';
 import Especial from '../../../assets/img/car 2.png';
 import Luxo from '../../../assets/img/car3.png';
 
-const Cars = () =>
+export const Cars = () =>
 {
     return(
         <>
@@ -35,7 +35,7 @@ const Cars = () =>
 
                                 <div className='filial'>
 
-                                        <select className='locadoras'  name="" id="">
+                                        <select className='input_locadoras'  name="" id="">
                                             <option value="">Locadora Filial 1</option>
                                             <option value="">Locadora Filial 2</option>
                                             <option value="">Locadora Matriz</option>
@@ -50,16 +50,16 @@ const Cars = () =>
 
                         </div>
 
-                    </div>
-                            
-                            <h2 className='tituloCarroEconomico'>Econômico</h2>
+                    </div>        
+                            {/* Parte dos carros Economicos */}
+                            <h2 className='tituloCarroEconomico'>ECONÔMICO</h2>
 
                             <div className='bordaTitulo'></div>
 
                             <div className='alinhamentoCarrosEconomicos'>
 
                                 <div className='cardCarroEconomico'>
-                                    <img className='imgCarroEconomico' src={Economico} alt="" />
+                                    <img className='imgCarros' src={Economico} alt="" />
 
                                     <h3 className='nomeCarros'>Fiat Uno 1.0</h3>
 
@@ -70,7 +70,7 @@ const Cars = () =>
                                 </div>
 
                                 <div className='cardCarroEconomico2'>
-                                    <img className='imgCarroEconomico' src={Economico} alt="" />
+                                    <img className='imgCarros' src={Economico} alt="" />
 
                                     <h3 className='nomeCarros'>Voyage 1.5</h3>
 
@@ -81,7 +81,7 @@ const Cars = () =>
                                 </div>
 
                                 <div className='cardCarroEconomico'>
-                                    <img className='imgCarroEconomico' src={Economico} alt="" />
+                                    <img className='imgCarros' src={Economico} alt="" />
 
                                     <h3 className='nomeCarros'>Onix 2.0</h3>
 
@@ -92,84 +92,88 @@ const Cars = () =>
                                 </div>
                             </div>
 
-                            <div>
-                                <h2>Especial</h2>
+                            {/* Parte dos carros ESPECIAIS */}
+                            <h2 className='tituloCarroEconomico'>ESPECIAL</h2>
 
-                                <div></div>
+                            <div className='bordaTitulo'></div>
 
-                                <div>
-                                    <img src={Especial} alt="" />
+                            <div className='alinhamentoCarrosEconomicos'>
 
-                                    <h3>Focus</h3>
+                                <div className='cardCarroEconomico'>
+                                    <img className='imgCarros' src={Especial} alt="" />
 
-                                    <p>Faça a sua reserva e garata a locação do automóvel.</p>
+                                    <h3 className='nomeCarros'>Focus</h3>
 
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
+                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
+
+                                    <button className='btnEditarCarros' >Editar</button>
+                                    <button className='btnExcluirCarros' >Excluir</button>
                                 </div>
 
-                                <div>
-                                    <img src={Especial} alt="" />
+                                <div className='cardCarroEconomico2'>
+                                    <img className='imgCarros' src={Especial} alt="" />
 
-                                    <h3>Sportage</h3>
+                                    <h3 className='nomeCarros'>Sportage</h3>
 
-                                    <p>Faça a sua reserva e garata a locação do automóvel.</p>
+                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
 
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
+                                    <button className='btnEditarCarros'>Editar</button>
+                                    <button className='btnExcluirCarros'>Excluir</button>
                                 </div>
 
-                                <div>
-                                    <img src={Especial} alt="" />
+                                <div className='cardCarroEconomico'>
+                                    <img className='imgCarros' src={Especial} alt="" />
 
-                                    <h3>L200</h3>
+                                    <h3 className='nomeCarros'>L200</h3>
 
-                                    <p>Faça a sua reserva e garata a locação do automóvel.</p>
+                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
 
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
+                                    <button className='btnEditarCarros'>Editar</button>
+                                    <button className='btnExcluirCarros'>Excluir</button>
                                 </div>
-                            </div>  
+                            </div> 
 
-                            <div>
-                                <h2>Luxo</h2>
+                            {/* Parte dos carros de LUXO */}
 
-                                <div></div>
+                            <h2 className='tituloCarroEconomico'>LUXO</h2>
 
-                                <div>
-                                    <img src={Luxo} alt="" />
+                            <div className='bordaTitulo'></div>
 
-                                    <h3>Ferrari</h3>
+                            <div className='alinhamentoCarrosEconomicos'>
 
-                                    <p>Faça a sua reserva e garata a locação do automóvel.</p>
+                                <div className='cardCarroEconomico'>
+                                    <img className='imgCarros' src={Luxo} alt="" />
 
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
-                                </div>
+                                    <h3 className='nomeCarros'>Ferrari</h3>
 
-                                <div>
-                                    <img src={Luxo} alt="" />
+                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
 
-                                    <h3>Porshe</h3>
-
-                                    <p>Faça a sua reserva e garata a locação do automóvel.</p>
-
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
+                                    <button className='btnEditarCarros' >Editar</button>
+                                    <button className='btnExcluirCarros' >Excluir</button>
                                 </div>
 
-                                <div>
-                                    <img src={Luxo} alt="" />
+                                <div className='cardCarroEconomico2'>
+                                    <img className='imgCarros' src={Luxo} alt="" />
 
-                                    <h3>Camaro</h3>
+                                    <h3 className='nomeCarros'>Porshe</h3>
 
-                                    <p>Faça a sua reserva e garata a locação do automóvel.</p>
+                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
 
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
+                                    <button className='btnEditarCarros'>Editar</button>
+                                    <button className='btnExcluirCarros'>Excluir</button>
                                 </div>
-                            </div>
-    
+
+                                <div className='cardCarroEconomico'>
+                                    <img className='imgCarros' src={Luxo} alt="" />
+
+                                    <h3 className='nomeCarros'>Camaro</h3>
+
+                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
+
+                                    <button className='btnEditarCarros'>Editar</button>
+                                    <button className='btnExcluirCarros'>Excluir</button>
+                                </div>
+                            </div> 
                 </main>
 
             <Footer/>
