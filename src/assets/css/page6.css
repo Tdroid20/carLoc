@@ -35,6 +35,10 @@
     border-radius: 10px;
 }
 
+.input_page6_campos::placeholder{
+    color: #040404;
+}
+
 .input_page6_campos_espaço{
     font-family: 'QuickSand';
     width: 953px;
@@ -46,6 +50,10 @@
     padding-left: 60px;
     background-color: #DCE0E2;
     border-radius: 10px;
+}
+
+.input_page6_campos_espaço::placeholder{
+    color: #040404;
 }
 
 .alinhamento_botoes_perfil{

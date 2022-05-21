@@ -12,9 +12,9 @@ export const Perfil = () =>
                 <div className="card_perfil_page6">
                     <h1 className="h1_page6">Perfil</h1>
                     <div className="div_inputs_perfil_page6">
-                        <input type="text" className="input_page6_campos"></input>
-                        <input type="text" className="input_page6_campos_espaço"></input>
-                        <input type="email" className="input_page6_campos"></input>
+                        <input type="text" className="input_page6_campos" placeholder="Maria de Fátma Muniz"></input>
+                        <input type="text" className="input_page6_campos_espaço" placeholder="(11) 9999-9090"></input>
+                        <input type="email" className="input_page6_campos" placeholder="maria@gmail.com"></input>
                     </div>
 
                     <div className="alinhamento_botoes_perfil">
