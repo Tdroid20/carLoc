@@ -36,6 +36,7 @@
 .texto_contato_footer{
     font-size: 24px;
     color: #060606;
+    text-decoration: underline;
 }
 
 .texto_contato_padding_footer{
@@ -43,6 +44,7 @@
     color: #060606;
     padding-left: 70px;
     padding-right: 70px;
+    text-decoration: underline;
 }
 
 .div_alinhamento_logo_footer{
