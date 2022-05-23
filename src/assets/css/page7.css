@@ -5,6 +5,7 @@
     height: 531px;
     margin: auto;
     margin-top: 78px;
+    margin-bottom: 125px;
     border-radius: 5px;
     border: 1px solid #9F9999;
 }
@@ -110,10 +111,9 @@
     width: 1140px;
     height: 110px;
     margin: auto;
-    border: 1px solid #9F9999;
+    border: 1px solid #C6C4C4;
     border-radius: 5px;
-    margin-top: 124px;
-    margin-bottom: 79px;
+    margin-bottom: 20px;
 
 }
 

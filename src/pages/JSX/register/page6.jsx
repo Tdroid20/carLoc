@@ -56,7 +56,7 @@ export const Perfil = () =>
 
     const Editar = (id) =>
     {
-        if(nomeUsuario != '' && email != '' && telefone != ''){
+        if(nomeUsuario !== '' && email !== '' && telefone !== ''){
             api.put(`usuario/${id}`, {nome: nomeUsuario, email: email, telefone: telefone})
             .then(() => {window.location.reload()})
         }
@@ -78,26 +78,26 @@ export const Perfil = () =>
                     <div className="div_inputs_perfil_page6">
                         <input type="text" 
                         className="input_page6_campos" 
-                        placeholder="Maria de Fátma Muniz"
+                        placeholder="Nome:"
                         value={nomeUsuario}
                         onChange={(estadoInput) => setNomeUsuario(estadoInput.target.value)}></input>
 
                         <input type="text" 
                         className="input_page6_campos_espaço" 
-                        placeholder="(11) 9999-9090"
+                        placeholder="Telefone:"
                         value={telefone} 
                         onChange={(estadoInput) => setTelefone(estadoInput.target.value)}></input>
 
                         <input type="email"
                          className="input_page6_campos"
-                         placeholder="maria@gmail.com"
+                         placeholder="Email:"
                          value={email} 
                          onChange={(estadoInput) => setEmail(estadoInput.target.value)}></input>
                     </div>
 
                     <div className="alinhamento_botoes_perfil">
                         <button className="botao_atualizar_page6" onClick={() => Registrar()}>Atualizar</button>
-                        <button className="botao_atualizar_page6" onClick={() => Editar(guardarId)}>Free fire 2</button>
+                        
                         <button className="botao_excluir_page6">Excluir Cadastro</button>
                     </div>
                 </div>
