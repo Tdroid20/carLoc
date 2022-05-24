@@ -102,6 +102,20 @@
     border: 2px solid #DB1812;
 }
 
+.btnEditarCarros{
+    width: 250px;
+    height: 75px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 38px;
+}
+
 .h2_page6{
     font-family: 'Montserrat';
     font-size: 40px;

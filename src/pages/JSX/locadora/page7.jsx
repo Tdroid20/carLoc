@@ -3,6 +3,7 @@ import '../../../assets/css/page7.css'
 import Header from '../../../components/Header/header'
 import Footer from '../../../components/Footer/footer'
 import { api } from "../../../services/api";
+import BtnLocadora from "../../../components/btnLocadora/btnLocadora";
 
 
 export const Locadora = () => {
@@ -28,17 +29,10 @@ export const Locadora = () => {
     const [endereco, setEndereco] = useState('')
     const [telefone, setTelefone] = useState('')
     const [guardarId, setGuardarId] = useState(0)
+    const [boolean, setBoolean] = useState(false)
 
     const Registrar = () =>
     {
-            for (let index = 0; index < locadora.length; index++) 
-            {
-                if(locadora[index].nome === nomeLocadora)
-                {
-                    return
-                }
-            }
-
         api.post('locadoras', {nome: nomeLocadora, endereco: endereco, telefone: telefone})
         .then(() => {window.location.reload()})
     }
@@ -51,12 +45,15 @@ export const Locadora = () => {
         setEndereco(endereco)
         setTelefone(telefone)
         setGuardarId(id)
+
+        setBoolean(true)
+        window.scroll({top: 25,left: 0,behavior: 'smooth'});
     }
 
-    const Editar = (id) =>
+    const Editar = () =>
     {
         if(nomeLocadora !== '' && endereco !== '' && telefone !== ''){
-            api.put(`locadoras/${id}`, {nome: nomeLocadora, endereco: endereco, telefone: telefone})
+            api.put(`locadoras/${guardarId}`, {nome: nomeLocadora, endereco: endereco, telefone: telefone})
             .then(() => {window.location.reload()})
         }
     }
@@ -105,8 +102,7 @@ export const Locadora = () => {
                             placeholder="Telefone:"
                             value={telefone}
                             onChange={(estadoInput) => setTelefone(estadoInput.target.value)}></input>
-                            <button className="btCadastrar" onClick={() => Registrar()}>Cadastrar</button>
-                            <button className="btCadastrar" onClick={() => Editar(guardarId)}>Editar</button>
+                            <BtnLocadora trocarbotaopage7={boolean} Editarpage7={Editar} Cadastrarpage7={Registrar}/>
                         </div>
 
                     </div>

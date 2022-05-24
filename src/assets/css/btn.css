@@ -1,0 +1,33 @@
+.btnCadastrarCarros{
+    width: 250px;
+    height: 70px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'QuickSand';
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.btnEditarCarros{
+    width: 250px;
+    height: 75px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 38px;
+}
+
+.btnCadastrarCarros:hover,
+.btnEditarCarros:hover{
+    color: #DB1812;
+    background-color: #ffffff;
+    border: 2px solid #DB1812;
+}

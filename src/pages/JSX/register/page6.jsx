@@ -4,6 +4,7 @@ import { api } from "../../../services/api";
 
 import Header from "../../../components/Header/header";
 import Footer from "../../../components/Footer/footer";
+import BtnRegister from "../../../components/btnPageRegister/btnRegister";
 
 export const Perfil = () =>
 {
@@ -28,18 +29,11 @@ export const Perfil = () =>
     const [nomeUsuario, setNomeUsuario] = useState('')
     const [email, setEmail] = useState('')
     const [telefone, setTelefone] = useState('')
+    const [boolean, setBoolean] = useState(false)
     const [guardarId, setGuardarId] = useState(0)
 
     const Registrar = () =>
     {
-            for (let index = 0; index < usuario.length; index++) 
-            {
-                if(usuario[index].nome === nomeUsuario)
-                {
-                    return
-                }
-            }
-
         api.post('usuario', {nome: nomeUsuario, email: email, telefone: telefone})
         .then(() => {window.location.reload()})
     }
@@ -52,12 +46,15 @@ export const Perfil = () =>
         setTelefone(telefone)
         setEmail(email)
         setGuardarId(id)
+
+        setBoolean(true)
+        window.scroll({top: 25,left: 0,behavior: 'smooth'});
     }
 
-    const Editar = (id) =>
+    const Editar = () =>
     {
         if(nomeUsuario !== '' && email !== '' && telefone !== ''){
-            api.put(`usuario/${id}`, {nome: nomeUsuario, email: email, telefone: telefone})
+            api.put(`usuario/${guardarId}`, {nome: nomeUsuario, email: email, telefone: telefone})
             .then(() => {window.location.reload()})
         }
     }
@@ -96,7 +93,7 @@ export const Perfil = () =>
                     </div>
 
                     <div className="alinhamento_botoes_perfil">
-                        <button className="botao_atualizar_page6" onClick={() => Registrar()}>Atualizar</button>
+                        <BtnRegister trocarbotaopage6={boolean} Editarpage6={Editar} Cadastrarpage6={Registrar}/>
                         
                         <button className="botao_excluir_page6">Excluir Cadastro</button>
                     </div>

@@ -149,7 +149,19 @@
     font-size: 24px;
     font-weight: 700;
     color: #FFFFFF;
+}
 
+.btnCadastrarCarros:hover,
+.btnEditarCarros:hover{
+    color: #DB1812;
+    background-color: #ffffff;
+    border: 2px solid #DB1812;
+}
+
+.btnExcluirCarros:hover{
+    color: #ffffff;
+    background-color: #DB1812;
+    border: 2px solid #DB1812;
 }
 
 .tituloCarroEconomico
@@ -170,6 +182,8 @@
 .alinhamentoCarrosEconomicos
 {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .cardCarroEconomico

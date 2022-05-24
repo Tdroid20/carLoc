@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../../../assets/css/cars.css';
+import { api } from '../../../services/api';
 
 import Header from '../../../components/Header/header';
 import Footer from '../../../components/Footer/footer';
+import BtnCars from '../../../components/btnCars/btnCars';
 
 import Economico from '../../../assets/img/car1.png';
 import Especial from '../../../assets/img/car 2.png';
@@ -11,6 +13,81 @@ import Luxo from '../../../assets/img/car3.png';
 
 export const Cars = () =>
 {
+
+    const [carros, setCarros] = useState([])
+    const [locadoras, setLocadoras] = useState([])
+
+    // listar API
+    const ListarCarros = () =>
+    {
+        api.get('carros')
+        .then(result => {
+            setCarros(result.data)
+        })
+    }
+
+    useEffect(() =>{
+        ListarCarros()
+    }, [])
+
+    const ListarLocadora = () =>
+    {
+        api.get('locadoras')
+        .then(result => {
+            setLocadoras(result.data)
+        })
+    }
+
+    useEffect(() =>{
+        ListarLocadora()
+    }, [])
+
+    // POST
+
+    const [nomeCarro, setNomeCarro] = useState('')
+    const [portasCarro, setPortasCarro] = useState('')
+    const [numeroPessoas, setNumeroPessoas] = useState('')
+    const [airbags, setAirbags] = useState('false')
+    const [valorLocadora, setValorLocadora] = useState('')
+    const [guardarId, setGuardarId] = useState(0)
+    const [boolean, setBoolean] = useState(false)
+
+    const Registrar = () =>
+    {
+        api.post('carros', {nome: nomeCarro, portas: portasCarro, npessoas: numeroPessoas, airbag: airbags})
+        .then(() => {window.location.reload()})
+    }
+
+    //PUT
+
+    const guardarInfos = (id, nome, portas, npessoas, airbag) =>
+    {
+        setNomeCarro(nome)
+        setPortasCarro(portas)
+        setNumeroPessoas(npessoas)
+        setAirbags(airbag)
+        setGuardarId(id)
+
+        setBoolean(true)
+        window.scroll({top: 25,left: 0,behavior: 'smooth'});
+    }
+
+    const Editar = () =>
+    {
+        if(nomeCarro !== '' && portasCarro !== '' && numeroPessoas !== ''){
+            api.put(`carros/${guardarId}`, {nome: nomeCarro, portas: portasCarro, npessoas: numeroPessoas, airbag: airbags})
+            .then(() => {window.location.reload()})
+        }
+    }
+
+    //DELETE
+
+    const Excluir = (id) => {
+            api.delete(`carros/${id}`)
+            .then(() => {window.location.reload()})
+            
+    }
+
     return(
         <>
             <Header/>
@@ -20,30 +97,46 @@ export const Cars = () =>
                             <h1 className='tituloCarros'>Carros</h1>
 
                             <div className='cardInputsCarros'>
-                                <input className='inputCarro' type="text" placeholder='Onix 2.0' />
+                                <input 
+                                className='inputCarro' 
+                                type="text" 
+                                placeholder='Nome do carro:'
+                                value={nomeCarro}
+                                onChange={(e) => setNomeCarro(e.target.value)} />
 
                                 <div className='alinhamentoInputs'>
-                                    <select className='airbags' name="" id="">
-                                        <option value="">Airbag</option>
-                                        <option value="">Sem Airbag</option>
+                                    <select className='airbags' onChange={(estado) => setAirbags(estado.target.value)}>
+                                        <option value="default" disabled hidden>Airbags</option>
+                                        <option value="false">Com Airbag</option>
+                                        <option value="true">Sem Airbag</option>
                                     </select>
                                     
-                                    <input className='inputPortas' type="text" placeholder='Portas:' />
+                                    <input 
+                                    className='inputPortas' 
+                                    type="text" 
+                                    placeholder='Portas:'
+                                    value={portasCarro}
+                                    onChange={(e) => setPortasCarro(e.target.value)} />
 
-                                    <input className='inputPessoas' type="text" placeholder='Nº de Pessoas:' />
+                                    <input 
+                                    className='inputPessoas' 
+                                    type="text" 
+                                    placeholder='Nº de Pessoas:'
+                                    value={numeroPessoas}
+                                    onChange={(e) => setNumeroPessoas(e.target.value)} />
                                 </div>
 
                                 <div className='filial'>
 
-                                        <select className='input_locadoras'  name="" id="">
-                                            <option value="">Locadora Filial 1</option>
-                                            <option value="">Locadora Filial 2</option>
-                                            <option value="">Locadora Matriz</option>
+                                        <select className='input_locadoras'>
+                                            {locadoras.map((item) => {
+                                                <option hidden disabled selected>Locadoras:</option>
+                                                return(
+                                                    <option value="">{item.nome}</option>
+                                                )
+                                            })}
                                         </select>
-                                    
-
-                                    <button className='btnCadastrarCarros'>Cadastrar</button>
-                                    
+                                    <BtnCars trocarbotao={boolean} Cadastrar={Registrar} Editar={Editar} />
                                 </div>
 
                             </div>
@@ -57,39 +150,21 @@ export const Cars = () =>
                             <div className='bordaTitulo'></div>
 
                             <div className='alinhamentoCarrosEconomicos'>
+                                {carros.map((item) => {
+                                    return(
+                                    <div className='cardCarroEconomico'>
+                                        <img className='imgCarros' src={Economico} alt="" />
 
-                                <div className='cardCarroEconomico'>
-                                    <img className='imgCarros' src={Economico} alt="" />
+                                        <h3 className='nomeCarros'>{item.nome}</h3>
 
-                                    <h3 className='nomeCarros'>Fiat Uno 1.0</h3>
+                                        <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
 
-                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
+                                        <button className='btnEditarCarros' onClick={() => guardarInfos(item.id, item.nome, item.portas, item.npessoas, item.airbag)}>Editar</button>
+                                        <button className='btnExcluirCarros' onClick={() => Excluir(item.id)}>Excluir</button>
+                                    </div>
+                                    )
+                                })}
 
-                                    <button className='btnEditarCarros' >Editar</button>
-                                    <button className='btnExcluirCarros' >Excluir</button>
-                                </div>
-
-                                <div className='cardCarroEconomico2'>
-                                    <img className='imgCarros' src={Economico} alt="" />
-
-                                    <h3 className='nomeCarros'>Voyage 1.5</h3>
-
-                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
-
-                                    <button className='btnEditarCarros'>Editar</button>
-                                    <button className='btnExcluirCarros'>Excluir</button>
-                                </div>
-
-                                <div className='cardCarroEconomico'>
-                                    <img className='imgCarros' src={Economico} alt="" />
-
-                                    <h3 className='nomeCarros'>Onix 2.0</h3>
-
-                                    <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
-
-                                    <button className='btnEditarCarros'>Editar</button>
-                                    <button className='btnExcluirCarros'>Excluir</button>
-                                </div>
                             </div>
 
                             {/* Parte dos carros ESPECIAIS */}
