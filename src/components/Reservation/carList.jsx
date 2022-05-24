@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import carImg from "../../assets/img/car1.png";
-import { ReservationApi } from '../../pages/JSX/reservation';
-import { api } from '../../services/api';
-import { ConfirmModal } from '../confirm/confirm';
 
 const CarReservation = (props) => {
     let formatDateDelivery = props.obj.dataentrega
     let formatDate = props.obj.data
     let withdraw = props.obj.horario;
     let setAct = props.setAct;
-    let act = props.act;
     let setStatus = props.setStatus;
-    let Status= props.status;
-    let uid = props.uid
     let setUid = props.setUid
 
     return (

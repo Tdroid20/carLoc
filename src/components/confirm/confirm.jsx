@@ -7,10 +7,7 @@ export const ConfirmModal = (props) => {
     let setStatus = props.setStatus;
     let Status = props.status;
     let uid = props.uid;
-    let setUid = props.setUid;
     let setAct = props.setAct;
-    let act = props.act;
-    let setList = props.setList;
 
     return (
         <>
