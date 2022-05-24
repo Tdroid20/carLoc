@@ -1,0 +1,84 @@
+
+.linhamodal{
+
+    width: 550px;
+    height: 893px;
+    margin: auto;
+    border: 1px solid #9F9999;
+    border-radius: 15px;
+    margin-top: 124px;
+    margin-bottom: 79px;
+    
+}
+
+.imgModal{
+
+    width: 550px;
+    height: 312px;
+}
+
+.nomeCarModal{
+
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-top: 34px;
+    margin-bottom: 33px;
+    margin-left: 25px;
+  
+}
+
+.inputsModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputModal{
+
+    width: 502px;
+    height: 70px ;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 14px;
+    background-color: #DCE0E2;
+    border: none;
+    border-radius: 5px;
+    padding-left: 70px;
+    font-size: 24px;
+
+}
+
+.inputModal::placeholder{
+
+    font-family: 'Quicksand', sans-serif;
+    color: #040404;
+    font-size: 24px;
+    font-weight: 400px;
+
+}
+
+.btReservar{
+
+    width: 250px;
+    height: 70px;
+    background-color: #DB1812;
+    color: #fafdff;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 38px ;
+    margin-bottom: 54px;
+}
+
+.btReservar:hover{
+
+    
+    color: #DB1812;
+    background-color: #ffffff;
+    border: 2px solid #DB1812;
+
+
+}
