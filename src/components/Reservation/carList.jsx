@@ -1,19 +1,30 @@
 import React from 'react';
 import carImg from "../../assets/img/car1.png";
 
-const CarReservation = () => {
+const CarReservation = (props) => {
+    let formatDateDelivery = props.obj.dataentrega
+    let formatDate = props.obj.data
+    let withdraw = props.obj.horario;
+    let setAct = props.setAct;
+    let setStatus = props.setStatus;
+    let setUid = props.setUid
+
     return (
         <>
-            <div className="card">
+           <div className="card">
                 <div className="contentRV">
                     <img src={carImg} alt="Fiat Uno" id="carImage" />
                     <div className="infoRV">
                         <p className="carName">Fiat Uno 1.0</p>
-                        <p className="carInfos">Data retirada: 22/05/2022</p>
-                        <p className="carInfos">Horário retirada: 16:30</p>
-                        <p className="carInfos">Data de devolução:  30/05/2022</p>
+                        <p className="carInfos">Data retirada: {formatDate}</p>
+                        <p className="carInfos">Horário retirada: {withdraw}</p>
+                        <p className="carInfos">Data de devolução:  {formatDateDelivery}</p>
                     </div>
-                <button className="deleteRV">Excluir Reserva</button>
+                <button className={"deleteRV " + props.obj.id} onClick={() => {
+                    setAct(true)
+                    setUid(props.obj.id)
+                    setStatus('on')
+                }}>Excluir Reserva</button>
             </div>
         </div>
         </>
