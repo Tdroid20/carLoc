@@ -5,6 +5,7 @@ import { api } from '../../../services/api';
 
 import Header from '../../../components/Header/header';
 import Footer from '../../../components/Footer/footer';
+import Modal from "../../../components/Modal/index"
 
 import Economico from '../../../assets/img/car1.png';
 import Especial from '../../../assets/img/car 2.png';
@@ -12,6 +13,22 @@ import Luxo from '../../../assets/img/car3.png';
 
 export const CarrosUsuario = () =>
 {
+
+    const [modal, SetModal] = useState('hide')
+
+    const AbrirFecharModal = (estadoAtual) =>
+    {
+        if(estadoAtual === 'hide')
+        {
+            SetModal('show')
+        }
+        else
+        {
+            SetModal('hide')
+        }
+
+        window.scroll({top: 150,left: 0,behavior: 'smooth'});
+    }
 
     const [carros, setCarros] = useState([])
 
@@ -47,13 +64,13 @@ export const CarrosUsuario = () =>
 
                                 <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
 
-                                <button className='btnEditarCarros'>Detalhes</button>
+                                <button className='btnEditarCarros' onClick={ () => {AbrirFecharModal(modal)} }>Detalhes</button>
                             </div>
                             )
                             })}
                         </div>
 
-
+                        <Modal mostrar={modal} funcao={AbrirFecharModal}/>
                     {/* Parte dos carros ESPECIAIS */}
                     <h2 className='tituloCarroEspecialUsuario'>ESPECIAL</h2>
 
@@ -130,8 +147,8 @@ export const CarrosUsuario = () =>
                             <button className='btnEditarCarros'>Detalhes</button>
                         </div>
                     </div> 
+                    <div className={"fundo_escurecido " + modal} ></div>
                 </main>
-
             <Footer/>
         </>
     )

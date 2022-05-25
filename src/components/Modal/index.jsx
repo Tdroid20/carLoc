@@ -3,11 +3,11 @@ import fotocar from '../../assets/img/carmodal.png'
 import '../../assets/css/modal.css'
 
 
-export const Modal = () => {
+export const Modal = (props) => {
 
     return (
 
-        <div>
+        <div className={"div_modal " +props.mostrar}>
 
             <div className="linhamodal">
 
@@ -17,10 +17,10 @@ export const Modal = () => {
 
                 <div className="inputsModal">
 
-                    <input type="text" className="inputModal" placeholder="2 Portas" />
-                    <input type="text" className="inputModal" placeholder="Airbag" />
-                    <input type="text" className="inputModal" placeholder="5 pessoas" />
-                    <input type="text" className="inputModal" placeholder="Locadora Matriz" />
+                    <input type="text" className="inputModal" readOnly />
+                    <input type="text" className="inputModal" readOnly />
+                    <input type="text" className="inputModal" readOnly />
+                    <input type="text" className="inputModal" readOnly />
 
                     <button className="btReservar">Reservar</button>
 
@@ -33,3 +33,5 @@ export const Modal = () => {
     );
 
 }
+
+export default Modal
