@@ -34,8 +34,10 @@ export const Perfil = () =>
 
     const Registrar = () =>
     {
-        api.post('usuario', {nome: nomeUsuario, email: email, telefone: telefone})
-        .then(() => {window.location.reload()})
+        if(nomeUsuario !== '' && email !== '' && telefone !== 0) {
+            api.post('usuario', {nome: nomeUsuario, email: email, telefone: telefone})
+            .then(() => {window.location.reload()})
+        }
     }
 
     //PUT
@@ -76,12 +78,14 @@ export const Perfil = () =>
                         <input type="text" 
                         className="input_page6_campos" 
                         placeholder="Nome:"
+                        maxLength={20}
                         value={nomeUsuario}
                         onChange={(estadoInput) => setNomeUsuario(estadoInput.target.value)}></input>
 
                         <input type="text" 
                         className="input_page6_campos_espaço" 
                         placeholder="Telefone:"
+                        maxLength={12}
                         value={telefone} 
                         onChange={(estadoInput) => setTelefone(estadoInput.target.value)}></input>
 
@@ -105,26 +109,26 @@ export const Perfil = () =>
                 {usuario.map((item) =>
                 {
                     return(
-                        <div key={item.id}>
-                        <div className="div_pai_card_excluir_page6" onClick={() => guardarInfos(item.id, item.nome, item.telefone, item.email)}>
-                            <div className="div_posicionamento_textos_page6">
-                                <div>
-                                    <p className="texto_nome_page6">{item.nome}</p>
-                                </div>
+                        <div key={item.id} >
+                            <div className="div_pai_card_excluir_page6" onClick={() => guardarInfos(item.id, item.nome, item.telefone, item.email)}>
+                                <div className="div_posicionamento_textos_page6">
+                                    <div>
+                                        <p className="texto_nome_page6">{item.nome}</p>
+                                    </div>
 
-                                <div>
-                                    <p className="subtexto_usuario_page6">{item.telefone}</p>
-                                </div>
+                                    <div>
+                                        <p className="subtexto_usuario_page6">{item.telefone}</p>
+                                    </div>
 
-                                <div>
-                                    <p className="subtexto_usuario_page6">{item.email}</p>
-                                </div>
+                                    <div>
+                                        <p className="subtexto_usuario_page6">{item.email}</p>
+                                    </div>
 
-                                <div className="div_botao_excluir_page6">
-                                    <button className="btn_excluir_page6" onClick={() => Excluir(item.id)}>Excluir usuário</button>
-                                </div>
-                            </div> 
-                        </div>
+                                    <div className="div_botao_excluir_page6">
+                                        <button className="btn_excluir_page6" onClick={() => Excluir(item.id)}>Excluir usuário</button>
+                                    </div>
+                                </div> 
+                            </div>
                         </div>
                     );
                     

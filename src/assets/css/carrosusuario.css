@@ -1,0 +1,110 @@
+@import '../../global.css';
+
+.tituloCarroEconomico
+{
+    font-family: 'Montserrat';
+    font-size: 40px;
+    color: #040404;
+    font-weight: 400;
+    margin-top: 166px;
+}
+
+.bordaTitulo
+{
+    width: 634px;
+    border: 1px solid #000000;
+}
+
+.alinhamentoCarrosEconomicos
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cardCarroEconomico
+{
+    width: 352px;
+    height: 600px;
+    background: #FFFFFF;
+    border: 1px solid #C6C4C4;
+    border-radius: 10px;
+    margin-top: 29px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.imgCarros
+{
+    width: 350px;
+    height: 198.22px;
+    border-radius: 10px;
+}
+
+.nomeCarros
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    width: 250px;
+    margin-top: 34.78px;
+}
+
+.txtCarros
+{
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-size: 20px;
+    color: #040404;
+    width: 250px;
+    margin-top: 35px;
+}
+
+.btnEditarCarros
+{
+    width: 250px;
+    height: 75px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 38px;
+}
+
+.btnExcluirCarros
+{
+    width: 250px;
+    height: 75px;
+    background: #FFFFFF;
+    border: 2px solid #DB1812;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    color: #DB1812;
+    margin-top: 12px;
+}
+
+.cardCarroEconomico2
+{
+    margin-left: 40px;
+    margin-right: 44px;
+    width: 352px;
+    height: 600px;
+    background: #FFFFFF;
+    border: 1px solid #C6C4C4;
+    border-radius: 10px;
+    margin-top: 29px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
