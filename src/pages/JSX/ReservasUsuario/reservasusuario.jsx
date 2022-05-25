@@ -144,7 +144,7 @@ export const ReservasUsuario = () =>
                     
                     {reservas.map((item) => {
                         return(
-                        <div className='card_reserva_carros'>
+                        <div className='card_reserva_carros' key={item}>
                         <div className='alinhamento_card_reserva'>
                             <div>
                                 <img src={CarList} alt="Fiat Uno" />

@@ -168,7 +168,7 @@ export const Cars = () =>
                             </div>
 
                             {/* Parte dos carros ESPECIAIS */}
-                            <h2 className='tituloCarroEconomico'>ESPECIAL</h2>
+                            <h2 className='tituloCarroEspecial'>ESPECIAL</h2>
 
                             <div className='bordaTitulo'></div>
 
@@ -210,7 +210,7 @@ export const Cars = () =>
 
                             {/* Parte dos carros de LUXO */}
 
-                            <h2 className='tituloCarroEconomico'>LUXO</h2>
+                            <h2 className='tituloCarroLuxo'>LUXO</h2>
 
                             <div className='bordaTitulo'></div>
 

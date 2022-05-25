@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import '../../../assets/css/cars.css';
+import '../../../assets/css/carrosusuario.css';
 import { api } from '../../../services/api';
 
 import Header from '../../../components/Header/header';
@@ -32,15 +32,15 @@ export const CarrosUsuario = () =>
             <Header/>
                 <main>
 
-                    <h1 className=''>Carros</h1>
+                    <h1 className='tituloCarroUsuario'>Carros</h1>
                     {/* Parte dos carros Economicos */}
-                    <h2 className='tituloCarroEconomico'>ECONÔMICO</h2>
+                    <h2 className='tituloCarroEconomicoUsuario'>ECONÔMICO</h2>
 
                     <div className='bordaTitulo'></div>
                         <div className='alinhamentoCarrosEconomicos'>
                             {carros.map((item) => {
                             return(
-                            <div className='cardCarroEconomico'>
+                            <div className='cardCarroEconomico' key={item} >
                                 <img className='imgCarros' src={Economico} alt="" />
 
                                 <h3 className='nomeCarros'>{item.nome}</h3>
@@ -55,7 +55,7 @@ export const CarrosUsuario = () =>
 
 
                     {/* Parte dos carros ESPECIAIS */}
-                    <h2 className='tituloCarroEconomico'>ESPECIAL</h2>
+                    <h2 className='tituloCarroEspecialUsuario'>ESPECIAL</h2>
 
                     <div className='bordaTitulo'></div>
 
@@ -94,7 +94,7 @@ export const CarrosUsuario = () =>
 
                     {/* Parte dos carros de LUXO */}
 
-                    <h2 className='tituloCarroEconomico'>LUXO</h2>
+                    <h2 className='tituloCarroLuxoUsuario'>LUXO</h2>
 
                     <div className='bordaTitulo'></div>
 

@@ -1,18 +1,47 @@
 @import '../../global.css';
 
-.tituloCarroEconomico
+.tituloCarroUsuario
+{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 40px;
+    color: #040404;
+    text-align: center;
+    margin-top: 135px;
+}
+
+.tituloCarroEconomicoUsuario
 {
     font-family: 'Montserrat';
     font-size: 40px;
     color: #040404;
     font-weight: 400;
-    margin-top: 166px;
+    margin-top: 101px;
+}
+
+.tituloCarroEspecialUsuario
+{
+    font-family: 'Montserrat';
+    font-size: 40px;
+    color: #040404;
+    font-weight: 400;
+    margin-top: 112px;
+}
+
+.tituloCarroLuxoUsuario
+{
+    font-family: 'Montserrat';
+    font-size: 40px;
+    color: #040404;
+    font-weight: 400;
+    margin-top: 112px;
 }
 
 .bordaTitulo
 {
     width: 634px;
     border: 1px solid #000000;
+    margin-top: 9px;
 }
 
 .alinhamentoCarrosEconomicos
