@@ -15,6 +15,8 @@ export function HandleCredentialResponse(response) {
         console.log(token);
 
         window.localStorage.setItem('token', JSON.stringify(token))
+
+        window.location.replace('/profile')
     }
 
     window.google.accounts.id.initialize({
@@ -26,8 +28,6 @@ export function HandleCredentialResponse(response) {
       { theme: "outline", size: "large" }  // customization attributes
     );
     window.google.accounts.id.prompt(); // also display the One Tap dialog
-  }
-
-
+    }
 
 export default HandleCredentialResponse;

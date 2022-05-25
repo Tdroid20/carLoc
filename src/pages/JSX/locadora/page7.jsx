@@ -113,7 +113,7 @@ export const Locadora = () => {
 
                 {locadora.map((item) => {
                     return(
-                        <div className="linha2">
+                        <div className="linha2" key={item.id} >
 
                             <div className="conteudo2">
                                 <h2 className="Locadoras">{item.nome}</h2>
