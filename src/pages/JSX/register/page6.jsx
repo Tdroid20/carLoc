@@ -105,7 +105,7 @@ export const Perfil = () =>
                 {usuario.map((item) =>
                 {
                     return(
-                        <>
+                        <div key={item.id}>
                         <div className="div_pai_card_excluir_page6" onClick={() => guardarInfos(item.id, item.nome, item.telefone, item.email)}>
                             <div className="div_posicionamento_textos_page6">
                                 <div>
@@ -125,7 +125,7 @@ export const Perfil = () =>
                                 </div>
                             </div> 
                         </div>
-                        </>
+                        </div>
                     );
                     
                 })}

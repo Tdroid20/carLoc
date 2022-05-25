@@ -130,9 +130,9 @@ export const Cars = () =>
 
                                         <select className='input_locadoras'>
                                             {locadoras.map((item) => {
-                                                <option hidden disabled selected>Locadoras:</option>
+                                                <option hidden disabled>Locadoras:</option>
                                                 return(
-                                                    <option value="">{item.nome}</option>
+                                                    <option value="" key={item.id}>{item.nome}</option>
                                                 )
                                             })}
                                         </select>
@@ -152,7 +152,7 @@ export const Cars = () =>
                             <div className='alinhamentoCarrosEconomicos'>
                                 {carros.map((item) => {
                                     return(
-                                    <div className='cardCarroEconomico'>
+                                    <div className='cardCarroEconomico' key={item.id}>
                                         <img className='imgCarros' src={Economico} alt="" />
 
                                         <h3 className='nomeCarros'>{item.nome}</h3>
