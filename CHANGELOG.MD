@@ -7,7 +7,7 @@ Foi adicionado o botão de login co google 100% funcional. com ele voce pode log
 # Poteção de rotas
 Agora você não pode ir para nenhuma area do nosso site sem estar logado exeto a [pagina inicial](http://localhost:3000/home) ou a [pagina de login](http://localhost:3000/home)
 
-## Skyrus team official
+### Skyrus team official
 and
-## Powered by BRQ
+### Powered by BRQ
 ![logoBRQ](./src/assets/img/logo-brq%20png.png)
