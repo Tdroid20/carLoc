@@ -1,36 +1,91 @@
-import React from "react";
-import fotocar from '../../assets/img/carmodal.png'
+import React, { useState } from "react";
+import fotocar from '../../assets/img/carmodal.png';
 import '../../assets/css/modal.css'
 
 
 export const Modal = (props) => {
 
-    return (
+    // Listar Informações
 
-        <div className={"div_modal " +props.mostrar}>
+    const [portas, setPortas] = useState('')
+    const [pessoas, setPessoas] = useState('')
+    const [locadora, locadoraValor] = useState(0)
 
-            <div className="linhamodal">
+    const pegarInfos = () =>{
+        setPortas(portas)
+        setPessoas(pessoas)
+        locadoraValor(locadora)
+    }
 
-                <img className="imgModal" src={fotocar} alt="" />
+    if (props.item !== undefined) {
+        
+        let texto;
 
-                <p className="nomeCarModal">Onix2.0</p>
+        if(props.item.airbag === false)
+        {
+            texto= 'Sem airbag'
+        }
 
-                <div className="inputsModal">
+        else
+        {
+            texto = 'Com airbag'
+        }
 
-                    <input type="text" className="inputModal" readOnly />
-                    <input type="text" className="inputModal" readOnly />
-                    <input type="text" className="inputModal" readOnly />
-                    <input type="text" className="inputModal" readOnly />
-
-                    <button className="btReservar">Reservar</button>
-
+        return (
+    
+            <div className={"div_modal " +props.mostrar}>
+    
+                <div className="linhamodal" onClick={() => {pegarInfos()}}>
+    
+                    <img className="imgModal" src={fotocar} alt="" />
+    
+                    <p className="nomeCarModal">{props.item.nome}</p>
+    
+                    <div className="inputsModal">
+    
+                        <input 
+                        type="text" 
+                        className="inputModal" 
+                        readOnly 
+                        value={props.item.portas + ' portas'}/>
+    
+                        <input 
+                        type="text" 
+                        className="inputModal" 
+                        readOnly 
+                        value={texto}/>
+    
+                        <input 
+                        type="text" 
+                        className="inputModal" 
+                        readOnly 
+                        value={props.item.npessoas + ' pessoas'}/>
+    
+                        <input 
+                        type="text" 
+                        className="inputModal" 
+                        readOnly 
+                        value={'Locadora ' +props.item.locadora.nome}/>
+    
+                        <button className="btReservar">Reservar</button>
+    
+                    </div>
+    
                 </div>
-
+    
+    
             </div>
+        );
+    }
 
+    else{
+        return (
+            <>
 
-        </div>
-    );
+            </>
+        )
+    }
+    
 
 }
 
