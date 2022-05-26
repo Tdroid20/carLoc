@@ -14,11 +14,17 @@ import Luxo from '../../../assets/img/car3.png';
 export const CarrosUsuario = () =>
 {
 
+    // Pegar item
+
+    const [item, setItem] = useState()
+
+    // Modal
+
     const [modal, SetModal] = useState('hide')
 
-    const AbrirFecharModal = (estadoAtual) =>
+    const AbrirFecharModal = (item) =>
     {
-        if(estadoAtual === 'hide')
+        if(modal === 'hide')
         {
             SetModal('show')
         }
@@ -26,15 +32,19 @@ export const CarrosUsuario = () =>
         {
             SetModal('hide')
         }
+        
+        setItem(item)
 
         window.scroll({top: 150,left: 0,behavior: 'smooth'});
     }
+
+    // POST
 
     const [carros, setCarros] = useState([])
 
     const ListarCarros = () =>
     {
-        api.get('carros')
+        api.get('carros?_expand=locadora')
         .then(result => {
             setCarros(result.data)
         })
@@ -57,20 +67,20 @@ export const CarrosUsuario = () =>
                         <div className='alinhamentoCarrosEconomicos'>
                             {carros.map((item) => {
                             return(
-                            <div className='cardCarroEconomico' key={item} >
+                            <div className='cardCarroEconomico' key={item.id} >
                                 <img className='imgCarros' src={Economico} alt="" />
 
                                 <h3 className='nomeCarros'>{item.nome}</h3>
 
                                 <p className='txtCarros'>Faça a sua reserva e garata a locação do automóvel.</p>
 
-                                <button className='btnEditarCarros' onClick={ () => {AbrirFecharModal(modal)} }>Detalhes</button>
+                                <button className='btnEditarCarros' onClick={ () => {AbrirFecharModal(item)} }>Detalhes</button>
                             </div>
                             )
                             })}
                         </div>
 
-                        <Modal mostrar={modal} funcao={AbrirFecharModal}/>
+                        <Modal mostrar={modal} funcao={AbrirFecharModal} item={item}/>
                     {/* Parte dos carros ESPECIAIS */}
                     <h2 className='tituloCarroEspecialUsuario'>ESPECIAL</h2>
 

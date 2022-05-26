@@ -1,13 +1,14 @@
 .linhamodal{
     width: 550px;
     height: 893px;
-    margin: auto;
     border: 1px solid #9F9999;
     border-radius: 15px;
     margin-top: 124px;
     margin-bottom: 79px;
     z-index: 10;
-    background-color: white;
+    background-color: white;;
+    top: 385px;
+    left: 400px;
     position: absolute;
 }
 .imgModal{

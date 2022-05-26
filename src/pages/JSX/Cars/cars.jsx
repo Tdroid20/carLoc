@@ -48,24 +48,29 @@ export const Cars = () =>
     const [portasCarro, setPortasCarro] = useState('')
     const [numeroPessoas, setNumeroPessoas] = useState('')
     const [airbags, setAirbags] = useState('false')
-    const [valorLocadora, setValorLocadora] = useState('')
+    const [valorLocadora, setValorLocadora] = useState(0)
     const [guardarId, setGuardarId] = useState(0)
     const [boolean, setBoolean] = useState(false)
 
     const Registrar = () =>
     {
-        api.post('carros', {nome: nomeCarro, portas: portasCarro, npessoas: numeroPessoas, airbag: airbags})
+        console.log(valorLocadora);
+
+        api.post('carros', {nome: nomeCarro, portas: portasCarro, npessoas: numeroPessoas, airbag: airbags, locadoraId: valorLocadora})
+
         .then(() => {window.location.reload()})
     }
 
+
     //PUT
 
-    const guardarInfos = (id, nome, portas, npessoas, airbag) =>
+    const guardarInfos = (id, nome, portas, npessoas, airbag, valorLocadora) =>
     {
         setNomeCarro(nome)
         setPortasCarro(portas)
         setNumeroPessoas(npessoas)
         setAirbags(airbag)
+        setValorLocadora(valorLocadora)
         setGuardarId(id)
 
         setBoolean(true)
@@ -75,7 +80,7 @@ export const Cars = () =>
     const Editar = () =>
     {
         if(nomeCarro !== '' && portasCarro !== '' && numeroPessoas !== ''){
-            api.put(`carros/${guardarId}`, {nome: nomeCarro, portas: portasCarro, npessoas: numeroPessoas, airbag: airbags})
+            api.put(`carros/${guardarId}`, {nome: nomeCarro, portas: portasCarro, npessoas: numeroPessoas, airbag: airbags, locadoraId: valorLocadora})
             .then(() => {window.location.reload()})
         }
     }
@@ -106,9 +111,9 @@ export const Cars = () =>
 
                                 <div className='alinhamentoInputs'>
                                     <select className='airbags' onChange={(estado) => setAirbags(estado.target.value)}>
-                                        <option value="default" disabled hidden>Airbags</option>
-                                        <option value="false">Com Airbag</option>
-                                        <option value="true">Sem Airbag</option>
+                                        <option value="default" hidden>Airbags</option>
+                                        <option value="true">Com Airbag</option>
+                                        <option value="false">Sem Airbag</option>
                                     </select>
                                     
                                     <input 
@@ -128,13 +133,13 @@ export const Cars = () =>
 
                                 <div className='filial'>
 
-                                        <select className='input_locadoras'>
+                                        <select className='input_locadoras' value={valorLocadora} onChange={(e) => setValorLocadora(e.target.value)}>
+                                            <option hidden>Locadoras:</option>
                                             {locadoras.map((item) => {
-                                                <option hidden disabled >Locadoras:</option>
                                                 return(
-                                                    <option value="" key={item.id} >{item.nome}</option>
-                                                )
-                                            })}
+                                                    <option value={item.id} key={item.id} >{item.nome}</option>
+                                                    )
+                                                })}
                                         </select>
                                     <BtnCars trocarbotao={boolean} Cadastrar={Registrar} Editar={Editar} />
                                 </div>
