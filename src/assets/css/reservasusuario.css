@@ -51,6 +51,7 @@
 .alinhamentoInputs
 {
     margin-top: 58px;
+    display: flex;
 }
 
 .airbags
@@ -73,14 +74,13 @@
     background-size: .90em auto, 100%;
 }
 
-.inputPortas
+.input_reservas_usuario_padding
 {
     width: 320px;
     height: 70px;
     background: #DCE0E2;
     border-radius: 10px;
     border: none;
-    margin-left: 15px;
     margin-right: 15px;
     padding-left: 70px;
     font-family: 'Quicksand';
@@ -88,11 +88,11 @@
     color: #040404;
 }
 
-.inputPortas::placeholder{
+.input_reservas_usuario_padding::placeholder{
     color: #040404;
 }
 
-.inputPessoas
+.input_reservas_usuario
 {
     width: 320px;
     height: 70px;
@@ -100,12 +100,13 @@
     border-radius: 10px;
     border: none;
     padding-left: 70px;
+    margin-right: 15px;
     font-family: 'Quicksand';
     font-size: 24px;
     color: #040404;
 }
 
-.inputPessoas::placeholder{
+.input_reservas_usuario::placeholder{
     color: #040404;
 }
 
@@ -171,24 +172,7 @@
     color: #040404;
     font-weight: 400;
     margin-top: 166px;
-}
-
-.tituloCarroEspecial
-{
-    font-family: 'Montserrat';
-    font-size: 40px;
-    color: #040404;
-    font-weight: 400;
-    margin-top: 38px;
-}
-
-.tituloCarroLuxo
-{
-    font-family: 'Montserrat';
-    font-size: 40px;
-    color: #040404;
-    font-weight: 400;
-    margin-top: 38px;
+    margin-bottom: 10px;
 }
 
 .bordaTitulo
@@ -289,4 +273,90 @@
     display: flex;
     flex-direction: column;
     align-items: center
+}
+
+.card_reserva_carros{
+    height: 198px;
+    background: #FFFFFF;
+    border: 1px solid #C6C4C4;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 29px;
+}
+
+.alinhamento_card_reserva{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_textos_reserva{
+    font-family: 'QuickSand';
+    font-size: 20px;
+    width: 395px;
+}
+
+.nome_carro_reserva{
+    font-size: 24px;
+    color: #000000;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.div_botoes_reserva{
+    display: flex;
+    flex-direction: column;
+    margin-right: 18px;
+}
+
+.padding_titulo_card{
+    padding-top: 25px;
+}
+
+.texto_padding_centro{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card_nome_reserva {
+    margin-left: 75px;
+}
+
+.botao_editar_reserva{
+    width: 250px;
+    height: 75px;
+    background: #DB1812;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.botao_excluir_reserva{
+    font-family: 'QuickSand';
+    width: 250px;
+    height: 70px;
+    border: 2px solid #DB1812;
+    color: #DB1812;
+    font-size: 24px;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
+    background-color: white;
+    margin-top: 18px;
+}
+
+.botao_editar_reserva:hover{
+    color: #DB1812;
+    background-color: #ffffff;
+    border: 2px solid #DB1812;
+}
+
+.botao_excluir_reserva:hover{
+    color: #ffffff;
+    background-color: #DB1812;
+    border: 2px solid #DB1812;
 }

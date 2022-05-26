@@ -8,6 +8,9 @@ import { Perfil } from "./pages/JSX/register/page6"
 import { Reservation } from "./pages/JSX/reservation/index"
 import { Locadora } from './pages/JSX/locadora/page7';
 import { Cars } from "./pages/JSX/Cars/cars"
+import { CarrosUsuario } from './pages/JSX/CarrosUsuario/carrosUsuario';
+import ReservasUsuario from './pages/JSX/ReservasUsuario/reservasusuario';
+import PerfilUsuario from './pages/JSX/PerfilUsuario/perfilUsuario';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -39,6 +42,8 @@ function RoutersApp() {
                     <Route path='/reservations' element={<Navigate replace to="/login" />} />
                     <Route path='/rental' element={<Navigate replace to="/login" />} />
                     <Route path='/cars' element={<Navigate replace to="/login" />} />
+                    <Route path='/reservasusuario' element={ <ReservasUsuario /> } />
+                    <Route path='/perfilusuario' element={ <PerfilUsuario /> } />
                 </Routes>
             </BrowserRouter>
         )

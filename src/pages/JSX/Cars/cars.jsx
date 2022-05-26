@@ -150,9 +150,9 @@ export const Cars = () =>
 
                                         <select className='input_locadoras'>
                                             {locadoras.map((item) => {
-                                                <option hidden disabled selected>Locadoras:</option>
+                                                <option hidden disabled >Locadoras:</option>
                                                 return(
-                                                    <option value="">{item.nome}</option>
+                                                    <option value="" key={item.id} >{item.nome}</option>
                                                 )
                                             })}
                                         </select>
@@ -172,7 +172,7 @@ export const Cars = () =>
                             <div className='alinhamentoCarrosEconomicos'>
                                 {carros.map((item) => {
                                     return(
-                                    <div className='cardCarroEconomico'>
+                                    <div className='cardCarroEconomico' key={item.id} >
                                         <img className='imgCarros' src={Economico} alt="" />
 
                                         <h3 className='nomeCarros'>{item.nome}</h3>
@@ -188,7 +188,7 @@ export const Cars = () =>
                             </div>
 
                             {/* Parte dos carros ESPECIAIS */}
-                            <h2 className='tituloCarroEconomico'>ESPECIAL</h2>
+                            <h2 className='tituloCarroEspecial'>ESPECIAL</h2>
 
                             <div className='bordaTitulo'></div>
 
@@ -230,7 +230,7 @@ export const Cars = () =>
 
                             {/* Parte dos carros de LUXO */}
 
-                            <h2 className='tituloCarroEconomico'>LUXO</h2>
+                            <h2 className='tituloCarroLuxo'>LUXO</h2>
 
                             <div className='bordaTitulo'></div>
 

@@ -6,7 +6,7 @@ import Header from "../../../components/Header/header";
 import Footer from "../../../components/Footer/footer";
 import BtnRegister from "../../../components/btnPageRegister/btnRegister";
 
-export const Perfil = () =>
+export const PerfilUsuario = () =>
 {
 
     const [usuario, setUsuario] = useState([])
@@ -140,4 +140,4 @@ export const Perfil = () =>
     )
 }
 
-export default Perfil
+export default PerfilUsuario

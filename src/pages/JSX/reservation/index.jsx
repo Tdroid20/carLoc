@@ -14,12 +14,6 @@ export class ReservationApi {
     }
 }
 
-export function $deleteMode(id, act, setAct) {
-
-
-}
-
-
 export function Reservation() {
 
     const [list, setList] = useState([]);
