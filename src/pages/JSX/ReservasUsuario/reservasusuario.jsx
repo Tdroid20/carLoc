@@ -10,14 +10,14 @@ import CarList from "../../../assets/img/car1.png"
 
 export const ReservasUsuario = () =>
 {
-
     const [reservas, setReservas] = useState([])
     const [carros, setCarros] = useState([])
+    const [locadoras, setLocadoras] = useState([])
 
     // listar API
     const ListarReservas = () =>
     {
-        api.get('reservas')
+        api.get('reservas?_expand=carro')
         .then(result => {
             setReservas(result.data)
             console.log(result.data);
@@ -40,11 +40,23 @@ export const ReservasUsuario = () =>
         ListarCarros()
     }, [])
 
+
+    const ListarLocadoras = () =>
+    {
+        api.get('locadoras')
+        .then(result => {
+            setLocadoras(result.data)
+        })
+    }
+    
+    useEffect(() =>{
+        ListarLocadoras()
+    }, [])
+    
     // POST
 
     const [nomeCarro, setNomeCarro] = useState('')
     const [data, setData] = useState('')
-    const [dataReserva, setDataReserva] = useState('')
     const [horario, setHorario] = useState('')
     const [locadoraValor, setlocadoraValor] = useState('')
     const [dataDevolucao, setDataDevolucao] = useState('')
@@ -100,8 +112,7 @@ export const ReservasUsuario = () =>
                                 className='inputCarro' 
                                 type="text" 
                                 placeholder='Nome do carro:'
-                                value={nomeCarro}
-                                onChange={(e) => setNomeCarro(e.target.value)} />
+                                value={nomeCarro}/>
 
                                 <div className='alinhamentoInputs'>                                    
                                     
@@ -130,7 +141,9 @@ export const ReservasUsuario = () =>
                                 <div className='filial'>
 
                                         <select className='input_locadoras'>
-                                            <option value="">a</option>
+                                            {locadoras.map((item) => {
+                                                <option value="">{item.nome}</option>
+                                            })}
                                         </select>
                                     <BtnReservar trocarbtnreservar={boolean} CadastrarReservas={Registrar} EditarReservas={Editar} />
                                 </div>
@@ -143,6 +156,7 @@ export const ReservasUsuario = () =>
                     <div className='bordaTitulo'></div>
                     
                     {reservas.map((item) => {
+                        console.log(item);
                         return(
                         <div className='card_reserva_carros' key={item}>
                         <div className='alinhamento_card_reserva'>
@@ -150,7 +164,7 @@ export const ReservasUsuario = () =>
                                 <img src={CarList} alt="Fiat Uno" />
                             </div>
                             <div className='div_textos_reserva'>
-                                <p className='nome_carro_reserva'>Fiat Uno</p>
+                                <p className='nome_carro_reserva'>{item.carro.nome}</p>
                                 <p className='padding_titulo_card'>Data retirada: {item.data}</p>
                                 <p className='texto_padding_centro'>Horário retirada: {item.horario}</p>
                                 <p>Data de devolução: {item.dataentrega}</p>
