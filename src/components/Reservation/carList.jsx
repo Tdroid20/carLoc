@@ -2,12 +2,12 @@ import React from 'react';
 import carImg from "../../assets/img/car1.png";
 
 const CarReservation = (props) => {
-    let formatDateDelivery = props.obj.dataentrega
-    let formatDate = props.obj.data
+    let formatDateDelivery = props.obj.dataentrega.replace(/-/g, '/');
+    let formatDate = props.obj.data.replace(/-/g, '/');
     let withdraw = props.obj.horario;
     let setAct = props.setAct;
     let setStatus = props.setStatus;
-    let setUid = props.setUid
+    let setUid = props.setUid;
 
     return (
         <>

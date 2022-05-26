@@ -11,20 +11,38 @@ import { Cars } from "./pages/JSX/Cars/cars"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+
 function RoutersApp() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Navigate replace to="/home" />} />
-                <Route path='/home' element={ <Home /> }/>
-                <Route path='/login' element={ <Login /> } />
-                <Route path='/profile' element={ < Perfil/> } />
-                <Route path='/reservations' element={ < Reservation/> } />
-                <Route path='/rental' element={ < Locadora/> } />
-                <Route path='/cars' element={ <Cars /> } />
-            </Routes>
-        </BrowserRouter>
-    )
+    if(window.localStorage.getItem('token')) {
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Navigate replace to="/home" />} />
+                    <Route path='/home' element={ <Home /> }/>
+                    <Route path='/login' element={ <Login /> } />
+                    <Route path='/profile' element={ < Perfil/> } />
+                    <Route path='/reservations' element={ < Reservation/> } />
+                    <Route path='/rental' element={ < Locadora/> } />
+                    <Route path='/cars' element={ <Cars /> } />
+                </Routes>
+            </BrowserRouter>
+        )
+    } else {
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Navigate replace to="/home" />} />
+                    <Route path='/home' element={ <Home /> }/>
+                    <Route path='/login' element={ <Login /> } />
+
+                    <Route path='/profile' element={<Navigate replace to="/login" />} />
+                    <Route path='/reservations' element={<Navigate replace to="/login" />} />
+                    <Route path='/rental' element={<Navigate replace to="/login" />} />
+                    <Route path='/cars' element={<Navigate replace to="/login" />} />
+                </Routes>
+            </BrowserRouter>
+        )
+    }
 }
 
 root.render(

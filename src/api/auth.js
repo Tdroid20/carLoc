@@ -1,3 +1,6 @@
+import React from 'react'
+import { Navigate } from 'react-router-dom'
+
 function parseJwt(token) {
    console.log(token);
     var base64Url = token.split('.')[1];
@@ -13,8 +16,8 @@ export function HandleCredentialResponse(response) {
     if(response !== undefined) {
         let token = parseJwt(response.credential);
         console.log(token);
-
-        window.localStorage.setItem('token', JSON.stringify(token))
+        window.localStorage.setItem('token', JSON.stringify(token));
+        window.location.replace('/cars')
     }
 
     window.google.accounts.id.initialize({
