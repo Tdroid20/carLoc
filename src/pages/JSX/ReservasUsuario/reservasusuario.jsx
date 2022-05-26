@@ -7,14 +7,40 @@ import Header from '../../../components/Header/header';
 import Footer from '../../../components/Footer/footer';
 import BtnReservar from '../../../components/BtnReservasUsuario/btnReservas';
 import CarList from "../../../assets/img/car1.png"
+import { useLocation } from 'react-router-dom';
 
 export const ReservasUsuario = () =>
 {
+    const Location = useLocation()
     const [reservas, setReservas] = useState([])
     const [carros, setCarros] = useState([])
     const [locadoras, setLocadoras] = useState([])
 
     // listar API
+    const [idCarro, setIdCarro] = useState('')
+    const [pegarIdLocadora, setpegarIdLocadora] = useState('')
+    const [guardaCarro, setGuardaCarro] = useState('')
+    const [guardaLocadora, setGuardaLocadora] = useState('')
+
+
+    useEffect(() =>{
+        if(Location.state !== null){
+            const {id} = Location.state
+            const {locadoraId} = Location.state
+            const {guardarCarro} = Location.state
+            const {guardarLocadora} = Location.state
+    
+            setpegarIdLocadora(locadoraId)
+            setGuardaCarro(guardarCarro)
+            setGuardaLocadora(guardarLocadora)
+            setIdCarro(id)
+        }
+    }, [])
+    
+
+
+
+
     const ListarReservas = () =>
     {
         api.get('reservas?_expand=carro')
@@ -66,7 +92,7 @@ export const ReservasUsuario = () =>
 
     const Registrar = () =>
     {
-        api.post('reservas', {data: data, horario: horario, dataentrega: dataDevolucao})
+        api.post('reservas', {data: data, horario: horario, dataentrega: dataDevolucao, carroId: idCarro})
         .then(() => {window.location.reload()})
     }
 
@@ -87,7 +113,7 @@ export const ReservasUsuario = () =>
     const Editar = () =>
     {
         if(data !== '' && horario !== '' && dataDevolucao !== ''){
-            api.put(`reservas/${guardarId}`, {data: data, horario: horario, dataentrega: dataDevolucao})
+            api.put(`reservas/${guardarId}`, {data: data, horario: horario, dataentrega: dataDevolucao, carroId: idCarro, locadoraId: pegarIdLocadora})
             .then(() => {window.location.reload()})
         }
     }
@@ -112,7 +138,8 @@ export const ReservasUsuario = () =>
                                 className='inputCarro' 
                                 type="text" 
                                 placeholder='Nome do carro:'
-                                value={nomeCarro}/>
+                                readOnly
+                                value={guardaCarro}/>
 
                                 <div className='alinhamentoInputs'>                                    
                                     
@@ -140,10 +167,8 @@ export const ReservasUsuario = () =>
 
                                 <div className='filial'>
 
-                                        <select className='input_locadoras'>
-                                            {locadoras.map((item) => {
-                                                <option value="">{item.nome}</option>
-                                            })}
+                                        <select className='input_locadoras' defaultValue={1} disabled>
+                                            <option value="1">{guardaLocadora}</option>
                                         </select>
                                     <BtnReservar trocarbtnreservar={boolean} CadastrarReservas={Registrar} EditarReservas={Editar} />
                                 </div>
@@ -156,7 +181,6 @@ export const ReservasUsuario = () =>
                     <div className='bordaTitulo'></div>
                     
                     {reservas.map((item) => {
-                        console.log(item);
                         return(
                         <div className='card_reserva_carros' key={item}>
                         <div className='alinhamento_card_reserva'>
