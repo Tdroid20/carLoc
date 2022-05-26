@@ -10,12 +10,17 @@ import BtnCars from '../../../components/btnCars/btnCars';
 import Economico from '../../../assets/img/car1.png';
 import Especial from '../../../assets/img/car 2.png';
 import Luxo from '../../../assets/img/car3.png';
+import { BlockNullInput } from '../../../components/Errors/BlockNullinput/BlockNullinput';
 
 export const Cars = () =>
 {
 
     const [carros, setCarros] = useState([])
     const [locadoras, setLocadoras] = useState([])
+
+    //Estados Block Null Input
+    const [StatusErro, setStatus] = useState('ok');
+    const [field, setField] = useState('');
 
     // listar API
     const ListarCarros = () =>
@@ -54,6 +59,18 @@ export const Cars = () =>
 
     const Registrar = () =>
     {
+
+        if(nomeCarro === '') {
+            setStatus('Error')
+            return setField('Nome Do Carro')
+        } else if(portasCarro === '') {
+            setStatus('Error')
+            return setField('Portas')
+        } else if(numeroPessoas === '') {
+            setStatus('Error')
+            return setField('Nº de Pessoas')
+        }
+
         api.post('carros', {nome: nomeCarro, portas: portasCarro, npessoas: numeroPessoas, airbag: airbags})
         .then(() => {window.location.reload()})
     }
@@ -85,21 +102,24 @@ export const Cars = () =>
     const Excluir = (id) => {
             api.delete(`carros/${id}`)
             .then(() => {window.location.reload()})
-            
+
     }
 
     return(
         <>
             <Header/>
                 <main>
+
+                <BlockNullInput Status={StatusErro} setStatus={setStatus} field={field} />
+
                     <div className='bordaCarros'>
                         <div className='alinhamentoCarros'>
                             <h1 className='tituloCarros'>Carros</h1>
 
                             <div className='cardInputsCarros'>
-                                <input 
-                                className='inputCarro' 
-                                type="text" 
+                                <input
+                                className='inputCarro'
+                                type="text"
                                 placeholder='Nome do carro:'
                                 value={nomeCarro}
                                 onChange={(e) => setNomeCarro(e.target.value)} />
@@ -110,17 +130,17 @@ export const Cars = () =>
                                         <option value="false">Com Airbag</option>
                                         <option value="true">Sem Airbag</option>
                                     </select>
-                                    
-                                    <input 
-                                    className='inputPortas' 
-                                    type="text" 
+
+                                    <input
+                                    className='inputPortas'
+                                    type="text"
                                     placeholder='Portas:'
                                     value={portasCarro}
                                     onChange={(e) => setPortasCarro(e.target.value)} />
 
-                                    <input 
-                                    className='inputPessoas' 
-                                    type="text" 
+                                    <input
+                                    className='inputPessoas'
+                                    type="text"
                                     placeholder='Nº de Pessoas:'
                                     value={numeroPessoas}
                                     onChange={(e) => setNumeroPessoas(e.target.value)} />
@@ -143,7 +163,7 @@ export const Cars = () =>
 
                         </div>
 
-                    </div>        
+                    </div>
                             {/* Parte dos carros Economicos */}
                             <h2 className='tituloCarroEconomico'>ECONÔMICO</h2>
 
@@ -206,7 +226,7 @@ export const Cars = () =>
                                     <button className='btnEditarCarros'>Editar</button>
                                     <button className='btnExcluirCarros'>Excluir</button>
                                 </div>
-                            </div> 
+                            </div>
 
                             {/* Parte dos carros de LUXO */}
 
@@ -248,7 +268,7 @@ export const Cars = () =>
                                     <button className='btnEditarCarros'>Editar</button>
                                     <button className='btnExcluirCarros'>Excluir</button>
                                 </div>
-                            </div> 
+                            </div>
                 </main>
 
             <Footer/>

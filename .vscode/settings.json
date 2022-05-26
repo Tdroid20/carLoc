@@ -3,5 +3,6 @@
         "JSX": "react"
     },
     "explorer.compactFolders": false,
-    "deepscan.enable": true,
+    "deepscan.enable": false,
+    "liveServer.settings.port": 3001,
 }
