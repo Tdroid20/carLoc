@@ -21,16 +21,17 @@ export const Modal = (props) => {
 
     if (props.item !== undefined) {
         
-        let texto;
+        let texto
+        
 
-        if(props.item.airbag === false)
+        if (props.item.airbag === 'true')
         {
-            texto= 'Sem airbag'
+            texto = 'Com airbag'
         }
 
         else
         {
-            texto = 'Com airbag'
+            texto = 'Sem airbag'
         }
 
         return (
