@@ -8,6 +8,7 @@ import Footer from '../../../components/Footer/footer';
 import BtnReservar from '../../../components/BtnReservasUsuario/btnReservas';
 import CarList from "../../../assets/img/car1.png"
 import { useLocation } from 'react-router-dom';
+import { BlockNullInput } from '../../../components/Errors/BlockNullinput/BlockNullinput';
 
 export const ReservasUsuario = () =>
 {
