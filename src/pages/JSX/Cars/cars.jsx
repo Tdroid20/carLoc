@@ -112,8 +112,8 @@ export const Cars = () =>
                                 <div className='alinhamentoInputs'>
                                     <select className='airbags' onChange={(estado) => setAirbags(estado.target.value)}>
                                         <option value="default" hidden>Airbags</option>
-                                        <option value="true">Com Airbag</option>
-                                        <option value="false">Sem Airbag</option>
+                                        <option value="">Com Airbag</option>
+                                        <option value="">Sem Airbag</option>
                                     </select>
                                     
                                     <input 
