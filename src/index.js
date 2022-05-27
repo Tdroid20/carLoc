@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable array-callback-return */
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './global.css';
@@ -11,47 +12,64 @@ import { Cars } from "./pages/JSX/Cars/cars"
 import { CarrosUsuario } from './pages/JSX/CarrosUsuario/carrosUsuario';
 import ReservasUsuario from './pages/JSX/ReservasUsuario/reservasusuario';
 import PerfilUsuario from './pages/JSX/PerfilUsuario/perfilUsuario';
+import { api } from './services/api';
+import { BlockNullInput } from './components/Errors/BlockNullinput/BlockNullinput';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+let Data = localStorage.getItem('token');
 
 
-function RoutersApp() {
-    if(window.localStorage.getItem('token')) {
-        return (
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Navigate replace to="/home" />} />
-                    <Route path='/home' element={ <Home /> }/>
-                    <Route path='/login' element={ <Login /> } />
-                    <Route path='/profile' element={ < Perfil/> } />
-                    <Route path='/reservations' element={ < Reservation/> } />
-                    <Route path='/rental' element={ < Locadora/> } />
-                    <Route path='/cars' element={ <Cars /> } />
-                </Routes>
-            </BrowserRouter>
-        )
-    } else {
-        return (
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Navigate replace to="/home" />} />
-                    <Route path='/home' element={ <Home /> }/>
-                    <Route path='/login' element={ <Login /> } />
+     function RoutersApp() {
+         const [isAdmin, setAdmin] = useState(undefined);
 
-                    <Route path='/profile' element={<Navigate replace to="/login" />} />
-                    <Route path='/reservations' element={<Navigate replace to="/login" />} />
-                    <Route path='/rental' element={<Navigate replace to="/login" />} />
-                    <Route path='/cars' element={<Navigate replace to="/login" />} />
-                    <Route path='/reservasusuario' element={ <ReservasUsuario /> } />
-                    <Route path='/perfilusuario' element={ <PerfilUsuario /> } />
-                </Routes>
-            </BrowserRouter>
-        )
-    }
-}
+         useEffect(() => {
+            api.get('/admins').then(res => {
+                if(Data) {
+                    let admin = res.data
+                    let user = JSON.parse(Data);
 
-root.render(
-    <React.StrictMode>
-        <RoutersApp />
-    </React.StrictMode>
-);
+
+                    /* admin.map(x => {
+                        console.log(user.email);
+                        console.log(x.email);
+                        console.log(user.email === x.email);
+                        if(x.email === user.email) {
+                            console.log('bah');
+                            setAdmin(true)
+                        }
+                        return console.log(isAdmin);
+                    }); */
+                    const usuario = admin.find(usuario => usuario.email === user.email)
+                    if(usuario !== undefined) {
+                        setAdmin(true)
+                    }
+                        console.log(isAdmin);
+                    }
+
+                })
+         }, [isAdmin])
+
+                        return (
+                            <BrowserRouter>
+                                <Routes>
+                                    <Route path="/" element={<Navigate replace to="/home" />} />
+                                    <Route path='/home' element={ <Home /> }/>
+                                    <Route path='login' element={ <Login /> } />
+
+                                    <Route path='/profile' element={isAdmin ? <Perfil/> : <PerfilUsuario />} />
+
+                                    <Route path='/reservations' element={isAdmin ? <Reservation /> : <ReservasUsuario />} />
+
+                                    <Route path='/rental' element={isAdmin ? <Locadora/> : <BlockNullInput Status={'Error'} setStatus={'Error'} field={'F'} />} />
+
+                                    <Route path='/cars' element={isAdmin ? <Cars /> : <CarrosUsuario />} />
+                                </Routes>
+                            </BrowserRouter>
+                        )
+                    }
+
+    root.render(
+        <React.StrictMode>
+            <RoutersApp />
+        </React.StrictMode>
+    );
