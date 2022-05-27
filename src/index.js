@@ -14,6 +14,7 @@ import ReservasUsuario from './pages/JSX/ReservasUsuario/reservasusuario';
 import PerfilUsuario from './pages/JSX/PerfilUsuario/perfilUsuario';
 import { api } from './services/api';
 import { BlockNullInput } from './components/Errors/BlockNullinput/BlockNullinput';
+import { Forbidden } from './components/Errors/forbidden';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let Data = localStorage.getItem('token');
@@ -60,7 +61,7 @@ let Data = localStorage.getItem('token');
 
                                     <Route path='/reservations' element={isAdmin ? <Reservation /> : <ReservasUsuario />} />
 
-                                    <Route path='/rental' element={isAdmin ? <Locadora/> : <BlockNullInput Status={'Error'} setStatus={'Error'} field={'F'} />} />
+                                    <Route path='/rental' element={isAdmin ? <Locadora/> : <Forbidden Status={'Error'}  />} />
 
                                     <Route path='/cars' element={isAdmin ? <Cars /> : <CarrosUsuario />} />
                                 </Routes>
