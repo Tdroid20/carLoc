@@ -1,0 +1,73 @@
+@import '../../global.css';
+
+.footer
+{
+    display: flex;
+    height: 328px;
+    background: #CAD0D3;
+    margin-top: 120px;
+    font-family: 'Roboto';
+}
+
+.div_alinhamento_footer{
+    display: flex;
+    margin: auto;
+    background: #CAD0D3;
+    width: 1150px;
+    justify-content: space-between;
+}
+
+.vertical
+{
+    margin-right: 79px;
+    margin-left: 30px;
+    height: 268px;
+    border-right: 1px solid black;
+}
+
+.div_endereco_texto_footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 20px;
+    margin-top: 80px;
+}
+
+.texto_contato_footer{
+    font-size: 24px;
+    color: #060606;
+    text-decoration: underline;
+}
+
+.texto_contato_padding_footer{
+    font-size: 24px;
+    color: #060606;
+    padding-left: 70px;
+    padding-right: 70px;
+    text-decoration: underline;
+}
+
+.div_alinhamento_logo_footer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.logo_padding_footer{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.texto_direitos_footer{
+    font-size: 24px;
+    margin-top: 80px;
+}
+
+.padding_email_footer{
+    padding-bottom: 25px;
+}
+
+.div_contatos_padding_footer{
+    margin-top: 30px;
+}
