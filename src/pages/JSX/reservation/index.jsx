@@ -8,7 +8,7 @@ import { api } from "../../../services/api";
 
 export class ReservationApi {
     list(setList) {
-        api.get('reservas').then(res => {
+        api.get('/reservas').then(res => {
             setList(res.data)
         })
     }
@@ -22,7 +22,7 @@ export function Reservation() {
     const [uid, setUid] = useState();
 
     useEffect(() => {
-        api.get('reservas').then(res => {
+        api.get('/reservas').then(res => {
             setList(res.data)
             setStatus('off')
         })

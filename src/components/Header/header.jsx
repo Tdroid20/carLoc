@@ -1,6 +1,11 @@
-import React from 'react'
-import logoHeader from "../../assets/img/logoheader.png"
-import '../../assets/css/header.css'
+import React from 'react';
+import logoHeader from "../../assets/img/logoheader.png";
+import '../../assets/css/header.css';
+
+function loggout() {
+    localStorage.removeItem('token');
+    return window.location.replace('/home');
+}
 
 export const Header = () =>
 {
@@ -20,7 +25,7 @@ export const Header = () =>
                 <div className='alinhamento_texto_header'>
                     <p className='button_header'><a href="/rental">Locadoras</a></p>
                     <p className='button_header_padding'><a href="/profile">Perfil</a></p>
-                    <p className='button_header'>Sair</p>
+                    <p className='button_header' onClick={() => loggout()}>Sair</p>
                 </div>
             </div>
         </>

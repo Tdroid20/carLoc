@@ -20,3 +20,13 @@ para que consiga ver o icone do react na pasta `JSX`.
     "jsx": "react-components",
     },
 ```
+# <p align="center">Creditos</p>
+
+### <p align="center">Skyrus team official</p>
+# <p align="center">![Skyrus](https://cdn.discordapp.com/emojis/859333165754613821.webp?size=600&quality=lossless)</center>
+### <p align="center">Powered by BRQ</p>
+<p align="center">
+    <img src="./src/assets/img/logo-brq%20png.png" >
+</P
+
+### <p align="center">Copyright © 2022 Skyrus - Todos os direitos reservados</p>

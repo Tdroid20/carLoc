@@ -69,7 +69,7 @@ export const Modal = (props) => {
                         readOnly 
                         value={'Locadora ' +props.item.locadora.nome}/>
     
-                        <Link to='/reservasusuario' state={{id: props.item.id, locadoraId: props.item.locadoraId, guardarCarro: props.item.nome, guardarLocadora: props.item.locadora.nome}}><button className="btReservar">Reservar</button></Link>
+                        <Link to='/reservations' state={{id: props.item.id, locadoraId: props.item.locadoraId, guardarCarro: props.item.nome, guardarLocadora: props.item.locadora.nome}}><button className="btReservar">Reservar</button></Link>
     
                     </div>
     

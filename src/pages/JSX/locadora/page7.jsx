@@ -4,6 +4,7 @@ import Header from '../../../components/Header/header'
 import Footer from '../../../components/Footer/footer'
 import { api } from "../../../services/api";
 import BtnLocadora from "../../../components/btnLocadora/btnLocadora";
+import { BlockNullInput } from "../../../components/Errors/BlockNullinput/BlockNullinput";
 
 
 export const Locadora = () => {
@@ -31,8 +32,24 @@ export const Locadora = () => {
     const [guardarId, setGuardarId] = useState(0)
     const [boolean, setBoolean] = useState(false)
 
+    //Estados Block Null Input
+    const [StatusErro, setStatus] = useState('ok');
+    const [field, setField] = useState('');
+
     const Registrar = () =>
     {
+
+        if(nomeLocadora === '') {
+            setStatus('Error')
+            return setField('Nome Da Locadora')
+        } else if(endereco === '') {
+            setStatus('Error')
+            return setField('Endereço')
+        } else if(telefone === '') {
+            setStatus('Error')
+            return setField('Telefone')
+        }
+
         api.post('locadoras', {nome: nomeLocadora, endereco: endereco, telefone: telefone})
         .then(() => {window.location.reload()})
     }
@@ -41,6 +58,7 @@ export const Locadora = () => {
 
     const guardarInfos = (id, nome, endereco, telefone) =>
     {
+
         setnomeLocadora(nome)
         setEndereco(endereco)
         setTelefone(telefone)
@@ -52,7 +70,19 @@ export const Locadora = () => {
 
     const Editar = () =>
     {
-        if(nomeLocadora !== '' && endereco !== '' && telefone !== ''){
+
+        if(nomeLocadora === '') {
+            setStatus('Error')
+            return setField('Nome Da Locadora')
+        } else if(endereco === '') {
+            setStatus('Error')
+            return setField('Endereço')
+        } else if(telefone === '') {
+            setStatus('Error')
+            return setField('Telefone')
+        }
+
+        if(nomeLocadora !== '' && endereco !== '' && telefone !== '') {
             api.put(`locadoras/${guardarId}`, {nome: nomeLocadora, endereco: endereco, telefone: telefone})
             .then(() => {window.location.reload()})
         }
@@ -73,6 +103,8 @@ export const Locadora = () => {
 
             <main>
 
+            <BlockNullInput Status={StatusErro} setStatus={setStatus} field={field} />
+
                 <div className="secao1">
 
                     <h1 className="titulo">Locadora</h1>
@@ -80,14 +112,14 @@ export const Locadora = () => {
                     <div className="paiInputs">
 
                         <div className="inputs">
-                            <input 
+                            <input
                             type="text"
                             className="input-1"
                             placeholder="Locadora:"
                             defaultValue={nomeLocadora}
                             onChange={(estadoInput) => setnomeLocadora(estadoInput.target.value)}></input>
 
-                            <input 
+                            <input
                               type="text"
                               className="input-1"
                               placeholder="Endereço:"
@@ -96,7 +128,7 @@ export const Locadora = () => {
                         </div>
 
                         <div className="bloco2">
-                            <input 
+                            <input
                             type="text"
                             className="input-2"
                             placeholder="Telefone:"
@@ -129,8 +161,8 @@ export const Locadora = () => {
 
                         </div>
                     )
-                    
-                })}  
+
+                })}
             </main>
             <Footer />
 

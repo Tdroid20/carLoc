@@ -4,4 +4,6 @@
     },
     "explorer.compactFolders": false,
     "deepscan.enable": true,
+    "liveServer.settings.port": 3001,
+    "deepscan.ignoreConfirmWarning": true,
 }

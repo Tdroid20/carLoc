@@ -1,3 +1,5 @@
+import { api } from "../services/api";
+
 function parseJwt(token) {
    console.log(token);
     var base64Url = token.split('.')[1];
@@ -9,14 +11,32 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 };
 
+let Data = localStorage.getItem('token');
+let isAdmin = false;
+
+api.get('/admins').then(res => {
+    if(Data) {
+        let admin = res.data
+        let user = JSON.parse(Data);
+
+
+        isAdmin = admin.map(x => {
+            console.log(x);
+            return Boolean(x.email === user.email)
+        });
+        isAdmin = isAdmin[0]
+        }
+    })
+
 export function HandleCredentialResponse(response) {
     if(response !== undefined) {
         let token = parseJwt(response.credential);
         console.log(token);
+        console.log('admin', isAdmin)
 
         window.localStorage.setItem('token', JSON.stringify(token))
 
-        window.location.replace('/profile')
+            window.location.replace('/profile')
     }
 
     window.google.accounts.id.initialize({
